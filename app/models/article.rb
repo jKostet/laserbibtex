@@ -1,4 +1,6 @@
 class Article < ActiveRecord::Base
+  include ModelToBib
+
   validates :reference, presence: true
   validates :author, presence: true
   validates :title, presence: true

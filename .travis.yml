@@ -1,5 +1,12 @@
 language: ruby
 rvm:
-  - 2.3.0
+- 2.3.0
 notifications:
   email: false
+deploy:
+  provider: heroku
+  api_key:
+    secure: bce+1QCAPLl5pnwWuzw186ZwfFCxKFHZtewu/0rP4JKc/FKukWqc6AcEmo5tmsyj1Oigbn2J99bw1vSSoz9YFu/6VcN0gNgTxfZz9O4gC9bwa+B+F5mbgfPJ2nVZWpanE/7St5xQx20uhhZygxStmDvfdR45g3BwFIeZlRxFNc7tWJYtXF2cuFmt9F0wM/LNiPMWiwUO6GG1eAgLdgQU2wzneqCA2uCvaX3Ru0kTb7gZ9OMZY10vRyf/RN/v7I1PuZ1Z0A/DIPclUYjx7IAmnJbH++/f9WDSCk0zwJIsNfp/I6VWjPueC9bZJzndoIh7tuIz7xH2p2dSjP0Szy8Y+rCmzrINQ/sZWwoRXgSdhAEYv4y6cgSv/MrHuWV5ltEjN7kx0EKLzlSgG/pxBeMVG0KK7mlDMpnKGkFqEi5QZVEeL/mTxnvCC5hnCVK+Apg4JUD+mcixXLZ7qAhmmI07KGEra1zS0C646WyphbPghWQ+YnaPl+gEjYD9v+IdmWDW6m4Uv6+Hs9fkqm6+wPlIiF3bxMl84JK4Ev9DkKJorfG5z/0Q1rmdGWJkLp+qwa95y2dF7936jAGgOEb7chU5Y7BGBKXbQxyz8jnFE8yrnhgUWd289mzBymnwkQeql2uyfInGcyCrlS0OAvYW8tKitgVX/DjA/AVynUETG1PvyYs=
+  app: laserbibtex
+  on:
+    repo: jKostet/laserbibtex
