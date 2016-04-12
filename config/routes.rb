@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
-  get 'static_pages/home'
 
-  get 'static_pages/about'
 
-  get 'static_pages/help'
+  # https://laserbibtex.herokuapp.com/ redirects to home page
+  root 'static_pages#home'
+
+  # get 'static_pages/home'
+
+  get 'home',   :to => 'static_pages#home'
+  get 'about',  :to => 'static_pages#about'
+  get 'help',   :to => 'static_pages#help'
 
   resources :articles
 
