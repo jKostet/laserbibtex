@@ -1,5 +1,6 @@
 Feature: Add article-type citation
   Required fields are:
+  - reference
   - author
   - title
   - journal
@@ -17,9 +18,10 @@ Feature: Add article-type citation
     Then new citation is not added
 
     Examples:
-      |field  |
-      |author |
-      |title  |
-      |journal|
-      |year   |
-      |volume |
+      |field    |
+      |reference|
+      |author   |
+      |title    |
+      |journal  |
+      |year     |
+      |volume   |
