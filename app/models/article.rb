@@ -1,4 +1,5 @@
 class Article < ActiveRecord::Base
+  validates :reference, presence: true
   validates :author, presence: true
   validates :title, presence: true
   validates :journal, presence: true
