@@ -3,6 +3,7 @@ Given ("all required fields are filled") do
 end
 
 When ("user tries to add citation") do
+  @entries = Article.count;
   @a.save
 end
 
@@ -36,5 +37,5 @@ Given("field reference is not filled") do
 end
 
 Then ("new citation is not added") do
-  Article.all.length.should == 0
+  Article.all.length.should == @entries
 end
