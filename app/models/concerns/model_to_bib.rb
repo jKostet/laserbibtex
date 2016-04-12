@@ -2,8 +2,10 @@ module ModelToBib
   extend ActiveSupport::Concern
 
   def toBibTex
-    
+    str = '@' + self.model_name.singular + '{' + self.reference + ',' + '\n' +
+    self.attribute_names.to_s
   end
+
 
   def encode_special_chars(string)
     tabel = [
@@ -19,5 +21,4 @@ module ModelToBib
 
     string
   end
-
 end
