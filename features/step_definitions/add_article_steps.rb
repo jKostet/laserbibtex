@@ -8,8 +8,7 @@ When ("user tries to add citation") do
 end
 
 Then ("new citation is added") do
-  article = Article.find_by_title "test"
-  article.should == @a
+  Article.count.should == @entries + 1
 end
 
 Given ("field author is not filled") do
