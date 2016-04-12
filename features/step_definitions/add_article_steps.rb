@@ -3,12 +3,12 @@ Given ("all required fields are filled") do
 end
 
 When ("user tries to add citation") do
+  @entries = Article.count;
   @a.save
 end
 
 Then ("new citation is added") do
-  article = Article.find_by_title "test"
-  article.should == @a
+  Article.count.should == @entries + 1
 end
 
 Given ("field author is not filled") do
@@ -36,5 +36,5 @@ Given("field reference is not filled") do
 end
 
 Then ("new citation is not added") do
-  Article.all.length.should == 0
+  Article.all.length.should == @entries
 end
