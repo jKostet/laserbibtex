@@ -59,15 +59,14 @@ RSpec.describe Article, type: :model do
 
     it "should generate proper form for bibtex" do
       s = article.toBibTex
-      bib = "@article{#{article.reference},\n
-              author = {#{article.author}},\n
-              title = {#{article.title}},\n
-              journal = {#{article.journal}},\n
-              year = {#{article.year}},\n
-              volume = {#{article.volume}}\n
-              }"
-      expect(s).to eq(bib)
+      bib = "@article{#{article.reference},\n"
+          + "\tauthor = {#{article.author}}\n"
+          + "\ttitle = {#{article.title}},\n"
+          + "\tjournal = {#{article.journal}},\n"
+          + "\tyear = {#{article.year}},\n"
+          + "\tvolume = {#{article.volume}}\n}"
 
+      expect(s).to eq(bib)
     end
 
   end
