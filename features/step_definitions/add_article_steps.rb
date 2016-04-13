@@ -8,7 +8,7 @@ When ("user tries to add citation") do
 end
 
 Then ("new citation is added") do
-  Article.count.should == @entries + 1
+  expect(Article.count).to be(@entries + 1)
 end
 
 Given ("field author is not filled") do
@@ -36,5 +36,5 @@ Given("field reference is not filled") do
 end
 
 Then ("new citation is not added") do
-  Article.all.length.should == @entries
+  expect(Article.count).to be(@entries)
 end
