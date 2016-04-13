@@ -64,7 +64,7 @@ RSpec.describe Article, type: :model do
           + "\ttitle = {#{article.title}},\n"
           + "\tjournal = {#{article.journal}},\n"
           + "\tyear = {#{article.year}},\n"
-          + "\tvolume = {#{article.volume}},\n}\n"
+          + "\tvolume = {#{article.volume}},\n}\n\n"
 
       expect(s).to eq(bib)
     end
