@@ -79,6 +79,11 @@ GEM
     diff-lcs (1.2.5)
     erubis (2.7.0)
     execjs (2.6.0)
+    factory_girl (4.7.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.7.0)
+      factory_girl (~> 4.7.0)
+      railties (>= 3.0.0)
     gherkin (3.2.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
@@ -91,6 +96,8 @@ GEM
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
     json (1.8.3)
+    launchy (2.4.3)
+      addressable (~> 2.3)
     libv8 (3.16.14.13)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
@@ -204,11 +211,14 @@ PLATFORMS
 
 DEPENDENCIES
   byebug
+  capybara
   coffee-rails (~> 4.1.0)
   cucumber-rails
   database_cleaner
+  factory_girl_rails
   jbuilder (~> 2.0)
   jquery-rails
+  launchy
   pg
   rails (= 4.2.6)
   rails_12factor
