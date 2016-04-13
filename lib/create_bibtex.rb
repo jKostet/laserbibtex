@@ -1,6 +1,6 @@
 class CreateBibtex
 
-  def createBibString
+  def self.createBibString
 
     allRefs = Article.all
     str = ""
