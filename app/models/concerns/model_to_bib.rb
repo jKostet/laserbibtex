@@ -2,8 +2,19 @@ module ModelToBib
   extend ActiveSupport::Concern
 
   def toBibTex
-    str = '@' + self.model_name.singular + '{' + self.reference + ',' + '\n' +
-    self.attribute_names.to_s
+    str = '@' + self.model_name.singular + '{' + self.reference + ',' + "\n"
+
+    self.attributes.reject{|x| x == id or x == reference}.each { |key, value|
+
+      if value.to_s != "" && key != "id" && key != "reference" && key != "created_at" && key != "updated_at"
+        line = "\t" << key << ' = {' << value.to_s << '},' << "\n"
+        str << encode_special_chars(line)
+       #puts "#{key} is #{value}"
+
+      end
+    }
+
+    return str
   end
 
 
