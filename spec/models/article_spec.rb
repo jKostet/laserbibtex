@@ -41,16 +41,32 @@ RSpec.describe Article, type: :model do
   end
 
   describe "with special characters" do
-    let(:article) {Article.create(reference: "ÄÄK16", author: "Ääkkönen Yrjö", title: "AAA CS", journal: "Öökköslehti", year: 2016, volume: 3)}
+    let(:article) {Article.create(reference: "ÄÄK16", author: "Ääkkönen, Yrjö", title: "AAA CS", journal: "Öökköslehti", year: 2016, volume: 3)}
 
     it "should replace special characters" do
       s = article.encode_special_chars(article.author)
-      expect(s).to eq("\\\"{A}\"\\\"{a}\"kk\\\"{o}\"nen Yrj\\\"{o}\"")
+      expect(s).to eq("\\\"{A}\"\\\"{a}\"kk\\\"{o}\"nen, Yrj\\\"{o}\"")
     end
 
     it "should replace special substrings" do
       s = article.encode_special_chars(article.title)
       expect(s).to eq("{A}{A}{A} {C}{S}")
+    end
+  end
+
+  describe "generating bibtex" do
+    let(:article) {Article.create(reference: "VAL02", author: "Vallaton, Ville", title: "Test", journal: "ASD Journal of ASD", year: 2002, volume: 2)}
+
+    it "should generate proper form for bibtex" do
+      s = article.toBibTex
+      bib = "@article{#{article.reference},\n"
+          + "\tauthor = {#{article.author}},\n"
+          + "\ttitle = {#{article.title}},\n"
+          + "\tjournal = {#{article.journal}},\n"
+          + "\tyear = {#{article.year}},\n"
+          + "\tvolume = {#{article.volume}}\n}"
+
+      expect(s).to eq(bib)
     end
 
   end
