@@ -13,10 +13,12 @@ module ModelToBib
         ["Ä", "\"{A}"],
         ["ö", "\"{o}"],
         ["Ö", "\"{O}"],
+        ["AAA", "{A}{A}{A}"],
+        ["CS", "{C}{S}"]
     ]
 
     tabel.each do |t|
-      string = string.gsub(t[0], t[1])
+      string.gsub!(t[0], t[1])
     end
 
     string
