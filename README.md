@@ -4,6 +4,8 @@ ohtu miniprojekti k2016 [![Build Status](https://travis-ci.org/jKostet/laserbibt
 
 [laserbibtext.herokuapp.com](https://laserbibtex.herokuapp.com/)
 
+[Backlog](https://trello.com/b/jzSn8iPO/miniprojekti)
+
 [Miniprojektin ohjeistus](https://github.com/mluukkai/ohtu2016/wiki/miniprojekti)
 
 [Miniprojektin speksi](https://github.com/mluukkai/ohtu2016/wiki/miniprojekti-speksi)
