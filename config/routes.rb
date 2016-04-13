@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   resources :articles
 
+  get 'download' => 'static_pages#download_bibtex', as: :download
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

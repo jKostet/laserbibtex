@@ -7,4 +7,8 @@ class StaticPagesController < ApplicationController
 
   def help
   end
+
+  def download_bibtex
+    send_data(CreateBibtex.createBibString, filename:"references.bib")
+  end
 end
