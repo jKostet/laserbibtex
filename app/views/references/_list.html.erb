@@ -1,0 +1,19 @@
+<table>
+  <thead>
+    <tr>
+      <th>reference</th>
+      <th>author</th>
+      <th>title</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% items.each do |item| %>
+      <tr>
+        <td><%= link_to item.reference, item %></td>
+        <td><%= item.author %></td>
+        <td><%= item.title %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

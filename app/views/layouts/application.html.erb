@@ -10,7 +10,11 @@
 
   <div class="navibar">
     <%= link_to 'articles', articles_path %>
-    
+    <%= link_to 'books', books_path %>
+    <%= link_to 'inproceedings', inproceedings_path %>
+    |
+    <%= link_to 'all references', references_path %>
+    <%= link_to '.bibtex', download_path %>
   </div>
 
 <%= yield %>
