@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160419071610) do
+ActiveRecord::Schema.define(version: 20160419072352) do
 
   create_table "articles", force: :cascade do |t|
     t.string   "author"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20160419071610) do
   end
 
   create_table "books", force: :cascade do |t|
+    t.string   "reference"
     t.string   "author"
     t.string   "title"
     t.string   "publisher"
@@ -46,6 +47,7 @@ ActiveRecord::Schema.define(version: 20160419071610) do
   end
 
   create_table "inproceedings", force: :cascade do |t|
+    t.string   "reference"
     t.string   "author"
     t.string   "title"
     t.string   "booktitle"
