@@ -7,15 +7,15 @@ Feature: Add article-type citation
   - year
   - volume
 
-  Scenario: User adds a new citation
-    Given all required fields are filled
-    When user tries to add citation
-    Then new citation is added
+  Scenario: User adds a new article
+    Given all required fields for article are filled
+    When user tries to add article
+    Then new article is added
 
-  Scenario Outline: User tries to add a citation without required info
-    Given field <field> is not filled
-    When user tries to add citation
-    Then new citation is not added
+  Scenario Outline: User tries to add an article without required info
+    Given articles field <field> is not filled
+    When user tries to add article
+    Then new article is not added
 
     Examples:
       |field    |
