@@ -4,5 +4,6 @@ class Inproceeding < ActiveRecord::Base
   validates :reference, presence: true
   validates :author, presence: true
   validates :title, presence: true
+  validates :booktitle, presence: true
   validates :year, presence: true
 end
