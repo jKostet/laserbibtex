@@ -1,0 +1,65 @@
+<%= form_for(@book) do |f| %>
+  <% if @book.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@book.errors.count, "error") %> prohibited this book from being saved:</h2>
+
+      <ul>
+      <% @book.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :reference %><br>
+    <%= f.text_field :reference %>
+  </div>
+  <div class="field">
+    <%= f.label :author %><br>
+    <%= f.text_field :author %>
+  </div>
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :publisher %><br>
+    <%= f.text_field :publisher %>
+  </div>
+  <div class="field">
+    <%= f.label :volume %><br>
+    <%= f.number_field :volume %>
+  </div>
+  <div class="field">
+    <%= f.label :number %><br>
+    <%= f.number_field :number %>
+  </div>
+  <div class="field">
+    <%= f.label :series %><br>
+    <%= f.text_field :series %>
+  </div>
+  <div class="field">
+    <%= f.label :address %><br>
+    <%= f.text_field :address %>
+  </div>
+  <div class="field">
+    <%= f.label :edition %><br>
+    <%= f.text_field :edition %>
+  </div>
+  <div class="field">
+    <%= f.label :year %><br>
+    <%= f.number_field :year %>
+  </div>
+  <div class="field">
+    <%= f.label :month %><br>
+    <%= f.number_field :month %>
+  </div>
+  <div class="field">
+    <%= f.label :note %><br>
+    <%= f.text_field :note %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
