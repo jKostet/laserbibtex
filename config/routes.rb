@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+  resources :inproceedings
   resources :books
   # https://laserbibtex.herokuapp.com/ redirects to home page
   root 'static_pages#home'
