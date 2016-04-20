@@ -38,4 +38,32 @@ describe "Article page" do
 
     expect(page).to have_content "Reference: ASD00"
   end
+
+  it "allows user to edit the articles" do
+    article = Article.create(reference: "ASD00", author: "asd", title: "test", journal: "asd journal", year: 2000, volume: 1)
+    expect(article).to be_valid
+
+    visit articles_path
+
+    click_link "Edit"
+
+    fill_in('article_title', with: 'better title')
+
+    click_button "Update Article"
+
+    expect(page).to have_content "Article was successfully updated."
+    expect(page).to have_content "Title: better title"
+  end
+
+  it "allows user to destroy articles" do
+    article = Article.create(reference: "ASD00", author: "asd", title: "test", journal: "asd journal", year: 2000, volume: 1)
+    expect(article).to be_valid
+
+    visit articles_path
+
+    click_link "Destroy"
+
+    expect(page).to have_content("Article was successfully destroyed.")
+    expect(page).not_to have_content("ASD00")
+  end
 end
