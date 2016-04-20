@@ -2,12 +2,13 @@ class CreateBibtex
 
   def self.createBibString
 
-    allRefs = Article.all
+    allArticles = Article.all
+
     str = ""
-    allRefs.each {|object| str << object.toBibTex}
+    allArticles.each {|object| str << object.toBibTex}
 
     str << "\n"
-    
+
     return str
 
   end
