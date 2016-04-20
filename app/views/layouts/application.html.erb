@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
   <title>Laserbibtex</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -8,16 +12,41 @@
 </head>
 <body>
 
-  <div class="navibar">
-    <%= link_to 'articles', articles_path %>
-    <%= link_to 'books', books_path %>
-    <%= link_to 'inproceedings', inproceedings_path %>
-    |
-    <%= link_to 'all references', references_path %>
-    <%= link_to '.bibtex', download_path %>
+<div class="container-fluid">
+
+<div class="navbar-header">
+  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+    <span class="sr-only">Toggle navigation</span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <a class="navbar-brand" href="/">LASER-BibTeX</a>
+</div>
+
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+  <ul class="nav navbar-nav">
+    <li><%= link_to 'All', references_path %></li>
+    <li><%= link_to 'Articles', articles_path %></li>
+    <li><%= link_to 'Books', books_path %></li>
+    <li><%= link_to 'Inproceedings', inproceedings_path %></li>
+  </ul>
+
+  <ul class="nav navbar-nav navbar-right">
+    <li><%= link_to 'Download .bibtex', download_path %></li>
+  </ul>
+</div>
+
+<% flash.each do |type, message| %>
+  <div class="alert alert-info fade in">
+    <button class="close" data-dismiss="alert">×</button>
+    <%= message %>
   </div>
+<% end %>
 
 <%= yield %>
+
+</div>
 
 </body>
 </html>
