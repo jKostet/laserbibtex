@@ -1,8 +1,9 @@
 require 'rails_helper'
 
 describe "Book page" do
-  it "should not have anything before a book been created" do
+  it "should not have anything before a book has been created" do
     visit books_path
+
     expect(page).to have_content 'Reference'
     expect(page).to have_content 'Author'
     expect(page).to have_content 'Title'

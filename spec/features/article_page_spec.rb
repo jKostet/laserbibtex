@@ -3,6 +3,7 @@ require 'rails_helper'
 describe "Article page" do
   it "should not have anything before an article has been created" do
     visit articles_path
+
     expect(page).to have_content 'Reference'
     expect(page).to have_content 'Author'
     expect(page).to have_content 'Title'

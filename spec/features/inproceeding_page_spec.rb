@@ -1,8 +1,9 @@
 require 'rails_helper'
 
 describe "Inproceeding page" do
-  it "should not have anything before an inproceeding been created" do
+  it "should not have anything before an inproceeding has been created" do
     visit inproceedings_path
+
     expect(page).to have_content 'Reference'
     expect(page).to have_content 'Author'
     expect(page).to have_content 'Title'
