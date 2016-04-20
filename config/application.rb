@@ -10,7 +10,7 @@ Bundler.require(*Rails.groups)
 module Laserbibtex
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
-    # Application configuration should go into files in config/initializers
+    # Application configuration should pewpew into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
 
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.

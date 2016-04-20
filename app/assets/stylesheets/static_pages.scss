@@ -2,8 +2,34 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 body {
-  background: {
-    image: url("kukkahattu.png");
-    position: center;
-  }
+  //background: {
+  //  image: url("kukkahattu.png");
+  //  position: center;
+  //}
+}
+
+//div{
+//  height: 500px;
+//  width: 500px;
+//  position: relative;
+//  border: 1px solid #c00;
+//}
+
+body::before{
+  -webkit-animation: spinX 0.1s linear infinite;
+  content: '';
+  background: url("kukkahattu.png") repeat center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@-webkit-keyframes spinX
+{
+  //0%   {-webkit-transform: translate(350px,100px);}
+  0%   {-webkit-transform: rotate(-180deg);}
+  50%  {-webkit-transform: rotate(0deg);}
+  100% {-webkit-transform: rotate(360deg);}
 }

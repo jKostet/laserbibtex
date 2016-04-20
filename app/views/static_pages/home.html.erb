@@ -1,9 +1,31 @@
-<h1>StaticPages#home</h1>
-<div>
-  <p>
-    <h1 class="text-center" style="color:red">NEEDS MORE LASERS.</h1>
-  <%# <%= image_tag "kukkahattu.png" %>  <%#= image_tag "kukkahattu.png" %>  <%#= image_tag "kukkahattu.png" %>
-  </p>
-    <%= link_to "Get BibTeX file", download_path %>
-</div>
-<p>Find me in app/views/static_pages/home.html.erb</p>
+<body>
+  <h1>StaticPages#home</h1>
+  <div>
+    <p>
+      <h1 class="text-center" style="color:red">NEEDS MORE LASERS.</h1>
+    <%# <%= image_tag "kukkahattu.png" %>  <%#= image_tag "kukkahattu.png" %>  <%#= image_tag "kukkahattu.png" %>
+    </p>
+      <%= link_to "Get BibTeX file", download_path %>
+    <div>
+      <button onclick="do()">Click me</button>
+      <script src="laser.js">
+        function do() {
+          init();
+        }
+      </script>
+
+      <button onclick="myFunction()">Click me</button>
+
+      <p id="demo"></p>
+
+      <script>
+        function myFunction() {
+          document.getElementById("demo").innerHTML = "Hello World";
+        }
+      </script>
+
+    </div>
+
+  </div>
+  <p>Find me in app/views/static_pages/home.html.erb</p>
+</body>
