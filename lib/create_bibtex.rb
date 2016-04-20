@@ -11,7 +11,7 @@ class CreateBibtex
     end
 
     str = ""
-    allArticles.each {|object| str << object.toBibTex}
+    allRefs.each {|object| str << object.toBibTex}
 
     str << "\n"
 
