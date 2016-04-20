@@ -70,7 +70,7 @@ describe "Inproceeding page" do
 
     click_link "Destroy"
 
-    expect(page).to have_content("Inproceedinggit  was successfully destroyed.")
+    expect(page).to have_content("Inproceeding was successfully destroyed.")
     expect(page).not_to have_content("ASD00")
   end
 end
