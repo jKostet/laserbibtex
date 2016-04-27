@@ -74,4 +74,51 @@ describe "Book page" do
     expect(page).to have_content("Book was successfully destroyed.")
     expect(page).not_to have_content("BOO03")
   end
+
+  it "generates reference automatically if field is left empty" do
+    visit books_path
+
+    click_link "New Book"
+
+    fill_in('book_author', with: 'Sotilas Tähtien, LMAO AYYY')
+    fill_in('book_title', with: 'Kurpitsakirjallisuus')
+    fill_in('book_publisher', with: 'Avaruus ja puutarha')
+    fill_in('book_year', with: '2080')
+
+    click_button "Create Book"
+
+    expect(page).to have_content("Book was successfully created.")
+
+    click_link "Back"
+
+    click_link "New Book"
+
+    fill_in('book_author', with: 'Sotilas Tähtien, LMAO AYYY')
+    fill_in('book_title', with: 'Kurpitsakirjallisuus')
+    fill_in('book_publisher', with: 'Avaruus ja puutarha')
+    fill_in('book_year', with: '2080')
+
+    click_button "Create Book"
+
+    expect(page).to have_content("Book was successfully created.")
+
+    click_link "Back"
+
+    click_link "New Book"
+
+    fill_in('book_author', with: 'Sotilas Tähtien, LMAO AYYY')
+    fill_in('book_title', with: 'Kurpitsakirjallisuus')
+    fill_in('book_publisher', with: 'Avaruus ja puutarha')
+    fill_in('book_year', with: '2080')
+
+    click_button "Create Book"
+
+    expect(page).to have_content("Book was successfully created.")
+
+    click_link "Back"
+
+    expect(page).to have_content("SL2080")
+    expect(page).to have_content("SL2080a")
+    expect(page).to have_content("SL2080b")
+  end
 end

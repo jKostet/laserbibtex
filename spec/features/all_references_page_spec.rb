@@ -34,41 +34,4 @@ describe "All references page" do
     expect(page).to have_content 'asdasdasd'
     expect(page).to have_content 'testtesttest'
   end
-
-=begin
-  it "matches search with all fields" do
-    article = Article.create(reference: "ALL03", author: "asd", title: "test", journal: "asd journal", year: 2000, volume: 1)
-    expect(article).to be_valid
-
-    book = Book.create(reference: "ALL04", author: "asdasd", title: "testtest", publisher: "asd publish", year: 2000)
-    expect(book).to be_valid
-
-    inproceeding = Inproceeding.create(reference: "ALL05", author: "no", title: "nono", booktitle: "nonono booktitle", year: 3000)
-    expect(inproceeding).to be_valid
-
-    visit references_path
-
-    fill_in('q', with: 'asd')
-
-    click_button "Search"
-
-    expect(page).to have_content 'ALL03'
-    expect(page).to have_content 'ALL04'
-    expect(page).not_to have_content 'ALL05'
-
-    fill_in('q', with: 'no')
-
-    click_button "Search"
-
-    expect(page).to have_content 'ALL05'
-    expect(page).not_to have_content 'ALL04'
-
-    fill_in('q', with: 'publish')
-
-    click_button "Search"
-
-    expect(page).to have_content 'ALL04'
-    expect(page).not_to have_content 'ALL03'
-  end
-=end
 end
