@@ -21,35 +21,38 @@ describe "Inproceeding page" do
     expect(page).to have_content 'Month'
     expect(page).to have_content 'Note'
 
-    expect(page).not_to have_content("ASD00")
+    expect(page).not_to have_content("asd")
   end
 
   it "shows added inproceeding" do
-    inproceeding = Inproceeding.create(reference: "ASD00", author: "asd", title: "test", booktitle: "asd booktitle", year: 2000)
+    inproceeding = Inproceeding.new(reference: "INP00", author: "asd", title: "test", booktitle: "asd booktitle", year: 2000)
     expect(inproceeding).to be_valid
+    inproceeding.save
 
     visit inproceedings_path
 
-    expect(page).to have_content 'ASD00'
+    expect(page).to have_content 'INP00'
     expect(page).to have_content 'asd'
     expect(page).to have_content 'test'
     expect(page).to have_content 'asd booktitle'
   end
 
   it "allows user to navigate to the page of an inproceeding" do
-    inproceeding = Inproceeding.create(reference: "ASD00", author: "asd", title: "test", booktitle: "asd booktitle", year: 2000)
+    inproceeding = Inproceeding.new(reference: "INP01", author: "asd", title: "test", booktitle: "asd booktitle", year: 2000)
     expect(inproceeding).to be_valid
+    inproceeding.save
 
     visit inproceedings_path
 
     click_link "Show"
 
-    expect(page).to have_content "Reference: ASD00"
+    expect(page).to have_content "Reference: INP01"
   end
 
   it "allows user to edit the inproceedings" do
-    inproceeding = Inproceeding.create(reference: "ASD00", author: "asd", title: "test", booktitle: "asd booktitle", year: 2000)
+    inproceeding = Inproceeding.new(reference: "INP02", author: "asd", title: "test", booktitle: "asd booktitle", year: 2000)
     expect(inproceeding).to be_valid
+    inproceeding.save
 
     visit inproceedings_path
 
@@ -64,14 +67,15 @@ describe "Inproceeding page" do
   end
 
   it "allows user to destroy inproceedings" do
-    inproceeding = Inproceeding.create(reference: "ASD00", author: "asd", title: "test", booktitle: "asd booktitle", year: 2000)
+    inproceeding = Inproceeding.new(reference: "INP03", author: "asd", title: "test", booktitle: "asd booktitle", year: 2000)
     expect(inproceeding).to be_valid
+    inproceeding.save
 
     visit inproceedings_path
 
     click_link "Destroy"
 
     expect(page).to have_content("Inproceeding was successfully destroyed.")
-    expect(page).not_to have_content("ASD00")
+    expect(page).not_to have_content("INP03")
   end
 end
