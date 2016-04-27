@@ -25,11 +25,11 @@ RSpec.describe BooksController, type: :controller do
   # adjust the attributes here as well.
 
   let(:valid_attributes) {
-    {reference:"asdasd", author:"vilma vallaton", title:"laalalaa", publisher:"aaab", year:2010}
+    {reference:"BOOK01", author:"vilma vallaton", title:"laalalaa", publisher:"aaab", year:2010}
   }
 
   let(:invalid_attributes) {
-    {reference:"asdasd", author:nil, title:"laalalaa", publisher:"aaab", year:2010}
+    {reference:"BOOK01", author:nil, title:"laalalaa", publisher:"aaab", year:2010}
   }
 
 
@@ -105,14 +105,14 @@ RSpec.describe BooksController, type: :controller do
   describe "PUT #update" do
     context "with valid params" do
       let(:new_attributes) {
-          {reference:"PUF01", author:"vilma vallaton", title:"puffet on hyvää", publisher:"aaab", year:2010}
+          {reference:"BOOK02", author:"vilma vallaton", title:"puffet on hyvää", publisher:"aaab", year:2010}
       }
 
       it "updates the requested book" do
         book = Book.create! valid_attributes
         put :update, {:id => book.to_param, :book => new_attributes}, valid_session
         book.reload
-        expect(book.reference).to eq("PUF01")
+        expect(book.reference).to eq("BOOK02")
         expect(book.title).to eq("puffet on hyvää")
       end
 

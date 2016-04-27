@@ -23,3 +23,9 @@ Scenario Outline: User tries to add a book without required info
     |title|
     |publisher|
     |year|
+
+Scenario: User tries to add a book with duplicate reference
+    Given all required fields for book are filled
+    And books field reference is in use
+    When user tries to add book
+    Then new book is not added

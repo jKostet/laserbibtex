@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get 'help',   :to => 'static_pages#help'
   get 'references',   :to => 'references#references'
   get 'bibtex',   :to => 'references#show_bibtex'
+  get 'search', :to => 'search#search_results'
   resources :articles
 
   get 'download' => 'static_pages#download_bibtex', as: :download

@@ -22,11 +22,11 @@ RSpec.describe InproceedingsController, type: :controller do
   # Inproceeding. As you add validations to Inproceeding, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    {reference:"IN10", author:"vilma vallaton", title:"laalalaa", booktitle:"aaab", year:2010}
+    {reference:"IN01", author:"vilma vallaton", title:"laalalaa", booktitle:"aaab", year:2010}
   }
 
   let(:invalid_attributes) {
-    {reference:"IN10", author:nil, title:"laalalaa", booktitle:"aaab", year:2010}
+    {reference:"IN01", author:nil, title:"laalalaa", booktitle:"aaab", year:2010}
   }
 
   # This should return the minimal set of values that should be in the session
@@ -101,7 +101,7 @@ RSpec.describe InproceedingsController, type: :controller do
   describe "PUT #update" do
     context "with valid params" do
       let(:new_attributes) {
-        {reference:"IN10", author:"vilma vallaton", title:"laalalaa", booktitle:"puffet", year:2010}
+        {reference:"IN01", author:"vilma vallaton", title:"laalalaa", booktitle:"puffet", year:2010}
       }
 
       it "updates the requested inproceeding" do
