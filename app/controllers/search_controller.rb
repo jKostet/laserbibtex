@@ -6,7 +6,7 @@ class SearchController < ApplicationController
     @results = []
     allRefs.each do |ref|
       ref.attributes.each do |name, value|
-        if (value.to_s.include?(query))
+        if (value.to_s.downcase.include?(query.downcase))
           @results << ref
         end
       end
