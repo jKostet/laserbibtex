@@ -17,35 +17,38 @@ describe "Book page" do
     expect(page).to have_content 'Month'
     expect(page).to have_content 'Note'
 
-    expect(page).not_to have_content("ASD00")
+    expect(page).not_to have_content("asd")
   end
 
   it "shows added books" do
-    book = Book.create(reference: "ASD00", author: "asd", title: "test", publisher: "asd publish", year: 2000)
+    book = Book.new(reference: "BOO00", author: "asd", title: "test", publisher: "asd publish", year: 2000)
     expect(book).to be_valid
+    book.save
 
     visit books_path
 
-    expect(page).to have_content 'ASD00'
+    expect(page).to have_content 'BOO00'
     expect(page).to have_content 'asd'
     expect(page).to have_content 'test'
     expect(page).to have_content 'asd publish'
   end
 
   it "allows user to navigate to the page of a book" do
-    book = Book.create(reference: "ASD00", author: "asd", title: "test", publisher: "asd publish", year: 2000)
+    book = Book.new(reference: "BOO01", author: "asd", title: "test", publisher: "asd publish", year: 2000)
     expect(book).to be_valid
+    book.save
 
     visit books_path
 
     click_link "Show"
 
-    expect(page).to have_content "Reference: ASD00"
+    expect(page).to have_content "Reference: BOO01"
   end
 
   it "allows user to edit the books" do
-    book = Book.create(reference: "ASD00", author: "asd", title: "test", publisher: "asd publish", year: 2000)
+    book = Book.new(reference: "BOO02", author: "asd", title: "test", publisher: "asd publish", year: 2000)
     expect(book).to be_valid
+    book.save
 
     visit books_path
 
@@ -60,14 +63,15 @@ describe "Book page" do
   end
 
   it "allows user to destroy books" do
-    book = Book.create(reference: "ASD00", author: "asd", title: "test", publisher: "asd publish", year: 2000)
+    book = Book.new(reference: "BOO03", author: "asd", title: "test", publisher: "asd publish", year: 2000)
     expect(book).to be_valid
+    book.save
 
     visit books_path
 
     click_link "Destroy"
 
     expect(page).to have_content("Book was successfully destroyed.")
-    expect(page).not_to have_content("ASD00")
+    expect(page).not_to have_content("BOO03")
   end
 end

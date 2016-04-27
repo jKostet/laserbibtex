@@ -16,35 +16,38 @@ describe "Article page" do
     expect(page).to have_content 'Note'
     expect(page).to have_content 'Key'
 
-    expect(page).not_to have_content("ASD00")
+    expect(page).not_to have_content("asd")
   end
 
   it "shows added articles" do
-    article = Article.create(reference: "ASD00", author: "asd", title: "test", journal: "asd journal", year: 2000, volume: 1)
+    article = Article.new(reference: "ART00", author: "asd", title: "test", journal: "asd journal", year: 2000, volume: 1)
     expect(article).to be_valid
+    article.save
 
     visit articles_path
 
-    expect(page).to have_content 'ASD00'
+    expect(page).to have_content 'ART00'
     expect(page).to have_content 'asd'
     expect(page).to have_content 'test'
     expect(page).to have_content 'asd journal'
   end
 
   it "allows user to navigate to the page of an article" do
-    article = Article.create(reference: "ASD00", author: "asd", title: "test", journal: "asd journal", year: 2000, volume: 1)
+    article = Article.new(reference: "ART01", author: "asd", title: "test", journal: "asd journal", year: 2000, volume: 1)
     expect(article).to be_valid
+    article.save
 
     visit articles_path
 
     click_link "Show"
 
-    expect(page).to have_content "Reference: ASD00"
+    expect(page).to have_content "Reference: ART01"
   end
 
   it "allows user to edit the articles" do
-    article = Article.create(reference: "ASD00", author: "asd", title: "test", journal: "asd journal", year: 2000, volume: 1)
+    article = Article.new(reference: "ART02", author: "asd", title: "test", journal: "asd journal", year: 2000, volume: 1)
     expect(article).to be_valid
+    article.save
 
     visit articles_path
 
@@ -59,14 +62,15 @@ describe "Article page" do
   end
 
   it "allows user to destroy articles" do
-    article = Article.create(reference: "ASD00", author: "asd", title: "test", journal: "asd journal", year: 2000, volume: 1)
+    article = Article.new(reference: "ART03", author: "asd", title: "test", journal: "asd journal", year: 2000, volume: 1)
     expect(article).to be_valid
+    article.save
 
     visit articles_path
 
     click_link "Destroy"
 
     expect(page).to have_content("Article was successfully destroyed.")
-    expect(page).not_to have_content("ASD00")
+    expect(page).not_to have_content("ART03")
   end
 end
