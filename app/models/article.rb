@@ -1,5 +1,6 @@
 class Article < ActiveRecord::Base
   include ModelToBib
+  include GenerateReference
 
   validates :reference, presence: true, reference: true
   validates :author, presence: true
