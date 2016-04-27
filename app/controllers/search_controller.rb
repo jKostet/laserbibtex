@@ -5,7 +5,7 @@ class SearchController < ApplicationController
     allRefs = GetCitations.all_citations
     @results = []
     allRefs.each do |ref|
-      ref.attributes.each do |name, value|
+      ref.attributes.except("id", "created_at", "updated_at").each do |name, value|
         if (value.to_s.downcase.include?(query.downcase))
           @results << ref
         end
