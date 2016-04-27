@@ -1,9 +1,9 @@
 Given ("all required fields for book are filled") do
-  @b = Book.new(reference:"ASD00", author:"pirjo", title:"purjot pirjon ruokavaliossa", publisher:"asdasd", year:2000)
+  @b = FactoryGirl.build(:book)
 end
 
 And ("books field reference is in use") do
-  Book.new(reference:"ASD00", author:"pirjo", title:"purjot pirjon ruokavaliossa", publisher:"asdasd", year:2000).save()
+  FactoryGirl.create(:book)
 end
 
 When ("user tries to add book") do

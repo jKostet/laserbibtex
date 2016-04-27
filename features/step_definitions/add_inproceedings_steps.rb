@@ -1,9 +1,9 @@
 Given "all required fields for inproceedings are filled" do
-  @in = Inproceeding.new(reference:"ASD16", author:"pirjospiruliina", title:"asdasd", booktitle:"hellurei", year:2016)
+  @in = FactoryGirl.build(:inproceeding)
 end
 
 And ("inproceedings field reference is in use") do
-  Inproceeding.new(reference:"ASD16", author:"pirjospiruliina", title:"asdasd", booktitle:"hellurei", year:2016).save()
+  FactoryGirl.create(:inproceeding)
 end
 
 When "user tries to add inproceedings" do

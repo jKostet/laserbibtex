@@ -8,7 +8,7 @@ RSpec.describe Article, type: :model do
   end
 
   describe "with all required fields" do
-    let(:article) {Article.new(reference: "ART01", author: "asd", title: "test", journal: "asd journal", year: 2000, volume: 1)}
+    let(:article) {FactoryGirl.build(:article)}
 
     it "is saved if non-required fields are missing" do
       expect(article).to be_valid
@@ -17,15 +17,15 @@ RSpec.describe Article, type: :model do
     end
 
     it "has reference set correctly" do
-      expect(article.reference).to eq("ART01")
+      expect(article.reference).to eq("A2016")
     end
 
     it "has author set correctly" do
-      expect(article.author).to eq("asd")
+      expect(article.author).to eq("pirjospiruliina")
     end
 
     it "has title set correctly" do
-      expect(article.title).to eq("test")
+      expect(article.title).to eq("purjojen sielunelämä")
     end
 
     it "has journal set correctly" do
@@ -33,11 +33,11 @@ RSpec.describe Article, type: :model do
     end
 
     it "has year set correctly" do
-      expect(article.year).to be(2000)
+      expect(article.year).to be(2016)
     end
 
     it "has volume set correctly" do
-      expect(article.volume).to be(1)
+      expect(article.volume).to be(2)
     end
   end
 

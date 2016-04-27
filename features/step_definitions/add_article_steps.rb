@@ -1,9 +1,9 @@
 Given ("all required fields for article are filled") do
-  @a = Article.new(reference:"ASD00", author:"asd", title:"test", journal:"asd journal", year:2000, volume:1)
+  @a = FactoryGirl.build(:article)
 end
 
 And ("articles field reference is in use") do
-  Article.new(reference:"ASD00", author:"asd", title:"test", journal:"asd journal", year:2000, volume:1).save()
+  FactoryGirl.create(:article)
 end
 
 When ("user tries to add article") do

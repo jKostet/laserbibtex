@@ -1,26 +1,26 @@
 require 'rails_helper'
 
 RSpec.describe Book, type: :model do
-  let(:book) {Book.create(reference:"asdasd", author:"vilma vallaton", title:"laalalaa", publisher:"aaab", year:2010)}
+  let(:book) { FactoryGirl.create(:book) }
 
   it "sets the reference correctly" do
-      expect(book.reference).to eq("asdasd")
+      expect(book.reference).to eq("B2016")
   end
 
   it "sets the author correctly" do
-    expect(book.author).to eq("vilma vallaton")
+    expect(book.author).to eq("jarikorianteri")
   end
 
   it "sets the title correctly" do
-    expect(book.title).to eq("laalalaa")
+    expect(book.title).to eq("puffet on hyvää")
   end
 
   it "sets the publisher correctly" do
-    expect(book.publisher).to eq("aaab")
+    expect(book.publisher).to eq("asd publishing")
   end
 
   it "sets the year correctly" do
-    expect(book.year).to be(2010)
+    expect(book.year).to be(2016)
   end
 
   it "generates bibtex for book type citation" do
