@@ -21,3 +21,6 @@
 
 # Ignore RubyMine .idea
 .idea/
+
+# ignore byebug
+.byebug_history

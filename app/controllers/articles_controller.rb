@@ -26,6 +26,13 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
 
+    apu = article_params["reference"]
+    byebug
+    if (apu.empty?)
+      apu = @article.generateReference(article_params["author"], article_params["year"])
+      @article.reference = apu
+    end
+
     respond_to do |format|
       if @article.save
         format.html { redirect_to @article, notice: 'Article was successfully created.' }
