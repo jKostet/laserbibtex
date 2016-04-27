@@ -8,15 +8,16 @@ RSpec.describe Article, type: :model do
   end
 
   describe "with all required fields" do
-    let(:article) {Article.create(reference: "ASD00", author: "asd", title: "test", journal: "asd journal", year: 2000, volume: 1)}
+    let(:article) {Article.new(reference: "ART01", author: "asd", title: "test", journal: "asd journal", year: 2000, volume: 1)}
 
     it "is saved if non-required fields are missing" do
       expect(article).to be_valid
+      article.save
       expect(Article.count).to be(1)
     end
 
     it "has reference set correctly" do
-      expect(article.reference).to eq("ASD00")
+      expect(article.reference).to eq("ART01")
     end
 
     it "has author set correctly" do
