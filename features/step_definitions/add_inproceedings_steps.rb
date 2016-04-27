@@ -2,6 +2,10 @@ Given "all required fields for inproceedings are filled" do
   @in = Inproceeding.new(reference:"ASD16", author:"pirjospiruliina", title:"asdasd", booktitle:"hellurei", year:2016)
 end
 
+And ("inproceedings field reference is in use") do
+  Inproceeding.new(reference:"ASD16", author:"pirjospiruliina", title:"asdasd", booktitle:"hellurei", year:2016).save()
+end
+
 When "user tries to add inproceedings" do
   @entries = Inproceeding.count
   @in.save
@@ -31,6 +35,6 @@ Given "inproceedings field year is not filled" do
   @in = Inproceeding.new(reference:"ASD16", author:"pirjospiruliina", title:"asdasd", booktitle:"hellurei")
 end
 
-Then "new inproceedins is not added" do
+Then "new inproceedings is not added" do
   expect(Inproceeding.count).to be(@entries)
 end
