@@ -3,7 +3,7 @@ Given "all required fields for inproceedings are filled" do
 end
 
 And ("inproceedings field reference is in use") do
-  Book.new(reference:"ASD16", author:"pirjospiruliina", title:"asdasd", booktitle:"hellurei", year:2016).save()
+  Inproceeding.new(reference:"ASD16", author:"pirjospiruliina", title:"asdasd", booktitle:"hellurei", year:2016).save()
 end
 
 When "user tries to add inproceedings" do
