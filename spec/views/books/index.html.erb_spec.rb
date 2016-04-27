@@ -4,7 +4,7 @@ RSpec.describe "books/index", type: :view do
   before(:each) do
     assign(:books, [
       Book.create!(
-        :reference => "Reference",
+        :reference => "BOOK01",
         :author => "Author",
         :title => "Title",
         :publisher => "Publisher",
@@ -18,7 +18,7 @@ RSpec.describe "books/index", type: :view do
         :note => "Note"
       ),
       Book.create!(
-        :reference => "Reference",
+        :reference => "BOOK02",
         :author => "Author",
         :title => "Title",
         :publisher => "Publisher",
@@ -36,7 +36,8 @@ RSpec.describe "books/index", type: :view do
 
   it "renders a list of books" do
     render
-    assert_select "tr>td", :text => "Reference".to_s, :count => 2
+    assert_select "tr>td", :text => "BOOK01".to_s, :count => 1
+    assert_select "tr>td", :text => "BOOK02".to_s, :count => 1
     assert_select "tr>td", :text => "Author".to_s, :count => 2
     assert_select "tr>td", :text => "Title".to_s, :count => 2
     assert_select "tr>td", :text => "Publisher".to_s, :count => 2
