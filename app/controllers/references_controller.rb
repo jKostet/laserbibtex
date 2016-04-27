@@ -9,4 +9,9 @@ class ReferencesController < ApplicationController
     end
 
   end
+
+  def show_bibtex
+    @bibtex = CreateBibtex.createBibString
+  end
+
 end
