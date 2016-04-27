@@ -23,6 +23,7 @@ RSpec.describe BooksController, type: :controller do
   # This should return the minimal set of attributes required to create a valid
   # Book. As you add validations to Book, be sure to
   # adjust the attributes here as well.
+
   let(:valid_attributes) {
     {reference:"asdasd", author:"vilma vallaton", title:"laalalaa", publisher:"aaab", year:2010}
   }
@@ -30,6 +31,7 @@ RSpec.describe BooksController, type: :controller do
   let(:invalid_attributes) {
     {reference:"asdasd", author:nil, title:"laalalaa", publisher:"aaab", year:2010}
   }
+
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
