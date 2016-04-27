@@ -4,7 +4,7 @@ RSpec.describe "inproceedings/index", type: :view do
   before(:each) do
     assign(:inproceedings, [
       Inproceeding.create!(
-        :reference => "Reference",
+        :reference => "IN01",
         :author => "Author",
         :title => "Title",
         :booktitle => "Booktitle",
@@ -21,7 +21,7 @@ RSpec.describe "inproceedings/index", type: :view do
         :note => "Note"
       ),
       Inproceeding.create!(
-        :reference => "Reference",
+        :reference => "IN02",
         :author => "Author",
         :title => "Title",
         :booktitle => "Booktitle",
@@ -42,7 +42,8 @@ RSpec.describe "inproceedings/index", type: :view do
 
   it "renders a list of inproceedings" do
     render
-    assert_select "tr>td", :text => "Reference".to_s, :count => 2
+    assert_select "tr>td", :text => "IN01".to_s, :count => 1
+    assert_select "tr>td", :text => "IN02".to_s, :count => 1
     assert_select "tr>td", :text => "Author".to_s, :count => 2
     assert_select "tr>td", :text => "Title".to_s, :count => 2
     assert_select "tr>td", :text => "Booktitle".to_s, :count => 2
