@@ -1,5 +1,4 @@
 require 'rails_helper'
-require 'spec_helper'
 
 describe "Article page" do
   it "should not have anything before an article has been created" do
