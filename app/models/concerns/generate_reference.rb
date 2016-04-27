@@ -26,7 +26,7 @@ module GenerateReference
     self.reference = ref
     self.valid?
 
-    byebug
+    # byebug
     # Validate uniqueness of the generated reference
     # If the generated reference already exists, add a lowercase 'a'
     if (!self.errors.messages[:reference].nil?)

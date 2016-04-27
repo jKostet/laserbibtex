@@ -27,7 +27,7 @@ class ArticlesController < ApplicationController
     @article = Article.new(article_params)
 
     apu = article_params["reference"]
-    byebug
+    # byebug
     if (apu.empty?)
       apu = @article.generateReference(article_params["author"], article_params["year"])
       @article.reference = apu

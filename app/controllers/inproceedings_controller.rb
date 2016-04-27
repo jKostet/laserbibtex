@@ -26,6 +26,13 @@ class InproceedingsController < ApplicationController
   def create
     @inproceeding = Inproceeding.new(inproceeding_params)
 
+    apu = inproceeding_params["reference"]
+    # byebug
+    if (apu.empty?)
+      apu = @inproceeding.generateReference(inproceeding_params["author"], inproceeding_params["year"])
+      @inproceeding.reference = apu
+    end
+
     respond_to do |format|
       if @inproceeding.save
         format.html { redirect_to @inproceeding, notice: 'Inproceeding was successfully created.' }
