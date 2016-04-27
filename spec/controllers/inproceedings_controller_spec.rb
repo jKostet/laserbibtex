@@ -24,11 +24,11 @@ RSpec.describe InproceedingsController, type: :controller do
   # Inproceeding. As you add validations to Inproceeding, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    {reference:"IN10", author:"vilma vallaton", title:"laalalaa", booktitle:"aaab", year:2010}
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    {reference:"IN10", author:nil, title:"laalalaa", booktitle:"aaab", year:2010}
   }
 
   # This should return the minimal set of values that should be in the session
@@ -103,14 +103,14 @@ RSpec.describe InproceedingsController, type: :controller do
   describe "PUT #update" do
     context "with valid params" do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+        {reference:"IN10", author:"vilma vallaton", title:"laalalaa", booktitle:"puffet", year:2010}
       }
 
       it "updates the requested inproceeding" do
         inproceeding = Inproceeding.create! valid_attributes
         put :update, {:id => inproceeding.to_param, :inproceeding => new_attributes}, valid_session
         inproceeding.reload
-        skip("Add assertions for updated state")
+        expect(inproceeding.booktitle).to eq("puffet")
       end
 
       it "assigns the requested inproceeding as @inproceeding" do
