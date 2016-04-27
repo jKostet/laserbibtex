@@ -26,6 +26,13 @@ class BooksController < ApplicationController
   def create
     @book = Book.new(book_params)
 
+    apu = book_params["reference"]
+    # byebug
+    if (apu.empty?)
+      apu = @book.generateReference(book_params["author"], book_params["year"])
+      @book.reference = apu
+    end
+
     respond_to do |format|
       if @book.save
         format.html { redirect_to @book, notice: 'Book was successfully created.' }
