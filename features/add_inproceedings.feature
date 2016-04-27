@@ -14,7 +14,7 @@ Feature: Add inproceedings-type citation
   Scenario Outline: User tries to add an inproceedings without all required fields
     Given inproceedings field <field> is not filled
     When user tries to add inproceedings
-    Then new inproceedins is not added
+    Then new inproceedings is not added
 
     Examples:
     |field    |
@@ -23,3 +23,9 @@ Feature: Add inproceedings-type citation
     |title    |
     |booktitle|
     |year     |
+    
+  Scenario: User tries to add an inproceedings with duplicate reference
+    Given all required fields for inproceedings are filled
+    And inproceedings field reference is in use
+    When user tries to add inproceedings
+    Then new inproceedings is not added
