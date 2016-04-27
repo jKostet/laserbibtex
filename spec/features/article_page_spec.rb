@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'spec_helper'
 
 describe "Article page" do
   it "should not have anything before an article has been created" do
@@ -72,5 +73,55 @@ describe "Article page" do
 
     expect(page).to have_content("Article was successfully destroyed.")
     expect(page).not_to have_content("ART03")
+  end
+
+  it "generates reference automatically if field is left empty" do
+    visit articles_path
+
+    click_link "New Article"
+
+    fill_in('article_author', with: 'Sotilas Tähtien, LMAO AYYY')
+    fill_in('article_title', with: 'Kurpitsakirjat')
+    fill_in('article_journal', with: 'Eeppisiä tarinoita avaruudesta ja puutarhasta')
+    fill_in('article_year', with: '2080')
+    fill_in('article_volume', with: '3')
+
+    click_button "Create Article"
+
+    expect(page).to have_content("Article was successfully created.")
+
+    click_link "Back"
+
+    click_link "New Article"
+
+    fill_in('article_author', with: 'Sotilas Tähtien, LMAO AYYY')
+    fill_in('article_title', with: 'Kurpitsakirjat')
+    fill_in('article_journal', with: 'Eeppisiä tarinoita avaruudesta ja puutarhasta')
+    fill_in('article_year', with: '2080')
+    fill_in('article_volume', with: '1')
+
+    click_button "Create Article"
+
+    expect(page).to have_content("Article was successfully created.")
+
+    click_link "Back"
+
+    click_link "New Article"
+
+    fill_in('article_author', with: 'Sotilas Tähtien, LMAO AYYY')
+    fill_in('article_title', with: 'Kurpitsakirjat')
+    fill_in('article_journal', with: 'Eeppisiä tarinoita avaruudesta ja puutarhasta')
+    fill_in('article_year', with: '2080')
+    fill_in('article_volume', with: '4')
+
+    click_button "Create Article"
+
+    expect(page).to have_content("Article was successfully created.")
+
+    click_link "Back"
+
+    expect(page).to have_content("SL2080")
+    expect(page).to have_content("SL2080a")
+    expect(page).to have_content("SL2080b")
   end
 end
