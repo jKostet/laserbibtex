@@ -29,7 +29,7 @@ describe "Show BibTeX page" do
 
     expect(page).to have_content '@article{ARTBIB,'
     expect(page).to have_content '@book{BOOBIB,'
-    expect(page).to have_content '@inproceeding{INPBIB,'
+    expect(page).to have_content '@inproceedings{INPBIB,'
     expect(page).to have_content 'author = {asd},'
     expect(page).to have_content 'title = {testtest},'
     expect(page).to have_content 'year = {3000},'

@@ -2,7 +2,14 @@ module ModelToBib
   extend ActiveSupport::Concern
 
   def toBibTex
-    str = '@' + self.model_name.singular + '{' + self.reference + ',' + "\n"
+
+    name = self.model_name.singular.to_s
+
+    if (name == "inproceeding") then
+      name += 's'
+    end
+
+    str = '@' + name + '{' + self.reference + ',' + "\n"
 
     self.attributes.except("id", "reference", "created_at", "updated_at").each { |key, value|
         next unless value.present?
