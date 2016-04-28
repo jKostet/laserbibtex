@@ -80,7 +80,7 @@ describe "Book page" do
 
     click_link "New Book"
 
-    fill_in('book_author', with: 'Sotilas Tähtien, LMAO AYYY')
+    fill_in('book_author', with: 'Sotilas Tähtien and LMAO AYYY')
     fill_in('book_title', with: 'Kurpitsakirjallisuus')
     fill_in('book_publisher', with: 'Avaruus ja puutarha')
     fill_in('book_year', with: '2080')
@@ -93,7 +93,7 @@ describe "Book page" do
 
     click_link "New Book"
 
-    fill_in('book_author', with: 'Sotilas Tähtien, LMAO AYYY')
+    fill_in('book_author', with: 'Sotilas Tähtien and LMAO AYYY')
     fill_in('book_title', with: 'Kurpitsakirjallisuus')
     fill_in('book_publisher', with: 'Avaruus ja puutarha')
     fill_in('book_year', with: '2080')
@@ -106,7 +106,7 @@ describe "Book page" do
 
     click_link "New Book"
 
-    fill_in('book_author', with: 'Sotilas Tähtien, LMAO AYYY')
+    fill_in('book_author', with: 'Sotilas Tähtien and LMAO AYYY')
     fill_in('book_title', with: 'Kurpitsakirjallisuus')
     fill_in('book_publisher', with: 'Avaruus ja puutarha')
     fill_in('book_year', with: '2080')

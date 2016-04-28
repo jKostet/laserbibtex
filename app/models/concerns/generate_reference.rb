@@ -6,8 +6,8 @@ module GenerateReference
     ref = ""
 
     # Split authors to a hash with each name
-    # "Kostet Juho, Pirttinen Nea" => ["Kostet Juho", " Pirttinen Nea"]
-    a = author.split(",")
+    # "Kostet Juho and Pirttinen Nea" => ["Kostet Juho", " Pirttinen Nea"]
+    a = author.split(" and ")
 
     # For each author, take the first letter from the first word
     # Author(s) listed as "Surname, FirstName", so this will take

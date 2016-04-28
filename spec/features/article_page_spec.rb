@@ -79,7 +79,7 @@ describe "Article page" do
 
     click_link "New Article"
 
-    fill_in('article_author', with: 'Sotilas Tähtien, LMAO AYYY')
+    fill_in('article_author', with: 'Sotilas Tähtien and LMAO AYYY')
     fill_in('article_title', with: 'Kurpitsakirjat')
     fill_in('article_journal', with: 'Eeppisiä tarinoita avaruudesta ja puutarhasta')
     fill_in('article_year', with: '2080')
@@ -93,7 +93,7 @@ describe "Article page" do
 
     click_link "New Article"
 
-    fill_in('article_author', with: 'Sotilas Tähtien, LMAO AYYY')
+    fill_in('article_author', with: 'Sotilas Tähtien and LMAO AYYY')
     fill_in('article_title', with: 'Kurpitsakirjat')
     fill_in('article_journal', with: 'Eeppisiä tarinoita avaruudesta ja puutarhasta')
     fill_in('article_year', with: '2080')
@@ -107,7 +107,7 @@ describe "Article page" do
 
     click_link "New Article"
 
-    fill_in('article_author', with: 'Sotilas Tähtien, LMAO AYYY')
+    fill_in('article_author', with: 'Sotilas Tähtien and LMAO AYYY')
     fill_in('article_title', with: 'Kurpitsakirjat')
     fill_in('article_journal', with: 'Eeppisiä tarinoita avaruudesta ja puutarhasta')
     fill_in('article_year', with: '2080')

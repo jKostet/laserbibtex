@@ -84,7 +84,7 @@ describe "Inproceeding page" do
 
     click_link "New Inproceeding"
 
-    fill_in('inproceeding_author', with: 'Sotilas Tähtien, LMAO AYYY')
+    fill_in('inproceeding_author', with: 'Sotilas Tähtien and LMAO AYYY')
     fill_in('inproceeding_title', with: 'In pumpkins')
     fill_in('inproceeding_booktitle', with: 'Avaruus ja puutarha')
     fill_in('inproceeding_year', with: '2080')
@@ -97,7 +97,7 @@ describe "Inproceeding page" do
 
     click_link "New Inproceeding"
 
-    fill_in('inproceeding_author', with: 'Sotilas Tähtien, LMAO AYYY')
+    fill_in('inproceeding_author', with: 'Sotilas Tähtien and LMAO AYYY')
     fill_in('inproceeding_title', with: 'In pumpkins')
     fill_in('inproceeding_booktitle', with: 'Avaruus ja puutarha')
     fill_in('inproceeding_year', with: '2080')
@@ -110,7 +110,7 @@ describe "Inproceeding page" do
 
     click_link "New Inproceeding"
 
-    fill_in('inproceeding_author', with: 'Sotilas Tähtien, LMAO AYYY')
+    fill_in('inproceeding_author', with: 'Sotilas Tähtien and LMAO AYYY')
     fill_in('inproceeding_title', with: 'In pumpkins')
     fill_in('inproceeding_booktitle', with: 'Avaruus ja puutarha')
     fill_in('inproceeding_year', with: '2080')
