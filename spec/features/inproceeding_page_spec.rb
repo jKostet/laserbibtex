@@ -78,4 +78,51 @@ describe "Inproceeding page" do
     expect(page).to have_content("Inproceeding was successfully destroyed.")
     expect(page).not_to have_content("INP03")
   end
+
+  it "generates reference automatically if field is left empty" do
+    visit inproceedings_path
+
+    click_link "New Inproceeding"
+
+    fill_in('inproceeding_author', with: 'Sotilas Tähtien, LMAO AYYY')
+    fill_in('inproceeding_title', with: 'In pumpkins')
+    fill_in('inproceeding_booktitle', with: 'Avaruus ja puutarha')
+    fill_in('inproceeding_year', with: '2080')
+
+    click_button "Create Inproceeding"
+
+    expect(page).to have_content("Inproceeding was successfully created.")
+
+    click_link "Back"
+
+    click_link "New Inproceeding"
+
+    fill_in('inproceeding_author', with: 'Sotilas Tähtien, LMAO AYYY')
+    fill_in('inproceeding_title', with: 'In pumpkins')
+    fill_in('inproceeding_booktitle', with: 'Avaruus ja puutarha')
+    fill_in('inproceeding_year', with: '2080')
+
+    click_button "Create Inproceeding"
+
+    expect(page).to have_content("Inproceeding was successfully created.")
+
+    click_link "Back"
+
+    click_link "New Inproceeding"
+
+    fill_in('inproceeding_author', with: 'Sotilas Tähtien, LMAO AYYY')
+    fill_in('inproceeding_title', with: 'In pumpkins')
+    fill_in('inproceeding_booktitle', with: 'Avaruus ja puutarha')
+    fill_in('inproceeding_year', with: '2080')
+
+    click_button "Create Inproceeding"
+
+    expect(page).to have_content("Inproceeding was successfully created.")
+
+    click_link "Back"
+
+    expect(page).to have_content("SL2080")
+    expect(page).to have_content("SL2080a")
+    expect(page).to have_content("SL2080b")
+  end
 end
