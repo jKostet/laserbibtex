@@ -27,9 +27,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Bootstra 3
 gem 'bootstrap-sass', '~> 3.3.6'
 
-# Full text search
-gem 'textacular', '~> 3.0'
-
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
