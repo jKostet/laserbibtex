@@ -16,23 +16,28 @@ Then "new inproceedings is added" do
 end
 
 Given "inproceedings field reference is not filled" do
-  @in = Inproceeding.new(author:"pirjospiruliina", title:"asdasd", booktitle:"hellurei", year:2016)
+  @in = FactoryGirl.build(:inproceeding)
+  @in.reference = nil
 end
 
 Given "inproceedings field author is not filled" do
-  @in = Inproceeding.new(reference:"ASD16", title:"asdasd", booktitle:"hellurei", year:2016)
+  @in = FactoryGirl.build(:inproceeding)
+  @in.author = nil
 end
 
 Given "inproceedings field title is not filled" do
-  @in = Inproceeding.new(reference:"ASD16", author:"pirjospiruliina", booktitle:"hellurei", year:2016)
+  @in = FactoryGirl.build(:inproceeding)
+  @in.title = nil
 end
 
 Given "inproceedings field booktitle is not filled" do
-  @in = Inproceeding.new(reference:"ASD16", author:"pirjospiruliina", title:"asdasd", year:2016)
+  @in = FactoryGirl.build(:inproceeding)
+  @in.booktitle = nil
 end
 
 Given "inproceedings field year is not filled" do
-  @in = Inproceeding.new(reference:"ASD16", author:"pirjospiruliina", title:"asdasd", booktitle:"hellurei")
+  @in = FactoryGirl.build(:inproceeding)
+  @in.year = nil
 end
 
 Then "new inproceedings is not added" do

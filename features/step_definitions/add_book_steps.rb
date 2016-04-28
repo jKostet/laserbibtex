@@ -16,23 +16,28 @@ Then ("new book is added") do
 end
 
 Given ("books field reference is not filled") do
-  @b = Book.new(author:"pirjo", title:"purjot pirjon ruokavaliossa", publisher:"asdasd", year:2000)
+  @b = FactoryGirl.build(:book)
+  @b.reference = nil
 end
 
 Given ("books field author is not filled") do
-  @b = Book.new(reference:"ASD00", title:"purjot pirjon ruokavaliossa", publisher:"asdasd", year:2000)
+  @b = FactoryGirl.build(:book)
+  @b.author = nil
 end
 
 Given ("books field title is not filled") do
-  @b = Book.new(reference:"ASD00", author:"pirjo", publisher:"asdasd", year:2000)
+  @b = FactoryGirl.build(:book)
+  @b.title = nil
 end
 
 Given ("books field publisher is not filled") do
-  @b = Book.new(reference:"ASD00", author:"pirjo", title:"purjot pirjon ruokavaliossa", year:2000)
+    @b = FactoryGirl.build(:book)
+    @b.publisher = nil
 end
 
 Given "books field year is not filled" do
-  @b = Book.new(reference:"ASD00", author:"pirjo", title:"purjot pirjon ruokavaliossa", publisher:"asdasd")
+  @b = FactoryGirl.build(:book)
+  @b.year = nil
 end
 
 Then ("new book is not added") do

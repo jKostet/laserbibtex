@@ -16,27 +16,33 @@ Then ("new article is added") do
 end
 
 Given ("articles field author is not filled") do
-  @a = Article.new(reference:"ASD00", title:"test", journal:"asd journal", year:2000, volume:1)
+  @a = FactoryGirl.build(:article)
+  @a.author = nil
 end
 
 Given ("articles field title is not filled") do
-  @a = Article.new(reference:"ASD00", author:"test", journal:"asd journal", year:2000, volume:1)
+  @a = FactoryGirl.build(:article)
+  @a.title = nil
 end
 
 Given ("articles field journal is not filled") do
-  @a = Article.new(reference:"ASD00", author:"asd", title:"test", year:2000, volume:1)
+  @a = FactoryGirl.build(:article)
+  @a.journal = nil
   end
 
 Given ("articles field year is not filled") do
-  @a = Article.new(reference:"ASD00", author:"asd", journal:"asd journal", title:"test", volume:1)
+  @a = FactoryGirl.build(:article)
+  @a.year = nil
 end
 
 Given("articles field volume is not filled") do
-  @a = Article.new(reference:"ASD00", author:"asd", title:"test", journal:"asd journal", year:2000)
+  @a = FactoryGirl.build(:article)
+  @a.volume = nil
 end
 
 Given("articles field reference is not filled") do
-  @a = Article.new(author:"asd", title:"test", journal:"asd journal", year:2000, volume:1)
+  @a = FactoryGirl.build(:article)
+  @a.reference = nil
 end
 
 Then ("new article is not added") do

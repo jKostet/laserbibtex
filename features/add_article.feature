@@ -16,7 +16,7 @@ Feature: Add article-type citation
     Given articles field <field> is not filled
     When user tries to add article
     Then new article is not added
-    
+
     Examples:
       |field    |
       |reference|
@@ -25,10 +25,9 @@ Feature: Add article-type citation
       |journal  |
       |year     |
       |volume   |
-    
+
   Scenario: User tries to add an article with duplicate reference
     Given all required fields for article are filled
     And articles field reference is in use
     When user tries to add article
     Then new article is not added
-
