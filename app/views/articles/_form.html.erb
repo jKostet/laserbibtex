@@ -10,51 +10,12 @@
       </ul>
     </div>
   <% end %>
-
+<% for [:reference, :author, :title, :journal, :year, :volume, :number, :pages, :month, :note, :key].each do |field| %>
   <div class="field">
-    <%= f.label :reference %><br>
-    <%= f.text_field :reference %>
+    <%= f.label field %><br>
+    <%= f.text_field field %>
   </div>
-  <div class="field">
-    <%= f.label :author %><br>
-    <%= f.text_field :author %>
-  </div>
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :journal %><br>
-    <%= f.text_field :journal %>
-  </div>
-  <div class="field">
-    <%= f.label :year %><br>
-    <%= f.number_field :year %>
-  </div>
-  <div class="field">
-    <%= f.label :volume %><br>
-    <%= f.number_field :volume %>
-  </div>
-  <div class="field">
-    <%= f.label :number %><br>
-    <%= f.number_field :number %>
-  </div>
-  <div class="field">
-    <%= f.label :pages %><br>
-    <%= f.text_field :pages %>
-  </div>
-  <div class="field">
-    <%= f.label :month %><br>
-    <%= f.number_field :month %>
-  </div>
-  <div class="field">
-    <%= f.label :note %><br>
-    <%= f.text_field :note %>
-  </div>
-  <div class="field">
-    <%= f.label :key %><br>
-    <%= f.number_field :key %>
-  </div>
+<% end %>
   <div class="actions">
     <%= f.submit %>
   </div>
