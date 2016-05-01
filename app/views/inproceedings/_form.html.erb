@@ -10,67 +10,12 @@
       </ul>
     </div>
   <% end %>
-
+<% [:reference, :author, :title, :booktitle, :editor, :volume, :number, :series, :pages, :address, :organization, :publisher, :year, :month, :note].each do |field| %>
   <div class="field">
-    <%= f.label :reference %><br>
-    <%= f.text_field :reference %>
+    <%= f.label field %><br>
+    <%= f.text_field field %>
   </div>
-  <div class="field">
-    <%= f.label :author %><br>
-    <%= f.text_field :author %>
-  </div>
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :booktitle %><br>
-    <%= f.text_field :booktitle %>
-  </div>
-  <div class="field">
-    <%= f.label :editor %><br>
-    <%= f.text_field :editor %>
-  </div>
-  <div class="field">
-    <%= f.label :volume %><br>
-    <%= f.number_field :volume %>
-  </div>
-  <div class="field">
-    <%= f.label :number %><br>
-    <%= f.number_field :number %>
-  </div>
-  <div class="field">
-    <%= f.label :series %><br>
-    <%= f.text_field :series %>
-  </div>
-  <div class="field">
-    <%= f.label :pages %><br>
-    <%= f.text_field :pages %>
-  </div>
-  <div class="field">
-    <%= f.label :address %><br>
-    <%= f.text_field :address %>
-  </div>
-  <div class="field">
-    <%= f.label :organization %><br>
-    <%= f.text_field :organization %>
-  </div>
-  <div class="field">
-    <%= f.label :publisher %><br>
-    <%= f.text_field :publisher %>
-  </div>
-  <div class="field">
-    <%= f.label :year %><br>
-    <%= f.number_field :year %>
-  </div>
-  <div class="field">
-    <%= f.label :month %><br>
-    <%= f.number_field :month %>
-  </div>
-  <div class="field">
-    <%= f.label :note %><br>
-    <%= f.text_field :note %>
-  </div>
+<% end %>
   <div class="actions">
     <%= f.submit %>
   </div>
