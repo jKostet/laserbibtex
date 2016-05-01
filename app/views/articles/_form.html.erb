@@ -10,7 +10,7 @@
       </ul>
     </div>
   <% end %>
-<% for [:reference, :author, :title, :journal, :year, :volume, :number, :pages, :month, :note, :key].each do |field| %>
+<% [:reference, :author, :title, :journal, :year, :volume, :number, :pages, :month, :note, :key].each do |field| %>
   <div class="field">
     <%= f.label field %><br>
     <%= f.text_field field %>
