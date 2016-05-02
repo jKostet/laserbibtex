@@ -90,8 +90,7 @@ describe "Inproceeding page" do
     click_button "Create Inproceeding"
 
     expect(page).to have_content("Inproceeding was successfully created.")
-
-    click_link "Back"
+    
 
     click_link "New Inproceeding"
 
@@ -135,6 +134,6 @@ describe "Inproceeding page" do
     click_button "Create Inproceeding"
 
     expect(page).to have_content("Inproceeding was successfully created.")
-    
+
   end
 end
