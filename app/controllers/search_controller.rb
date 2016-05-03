@@ -35,6 +35,7 @@ class SearchController < ApplicationController
     found
   end
 
+  # Searches the citations tags for a query
   def check_tags(citation, query)
     if (citation.tags == nil)
       return false
