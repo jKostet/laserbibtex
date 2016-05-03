@@ -2,6 +2,7 @@ require 'rails_helper'
 
 describe "Article page" do
   let(:article) { FactoryGirl.build(:article) }
+  let(:article_multiple) { FactoryGirl.build(:article_multiple) }
 
   it "should not have anything before an article has been created" do
     visit articles_path
@@ -82,6 +83,16 @@ describe "Article page" do
     expect(page).to have_content("SL2080")
     expect(page).to have_content("SL2080a")
     expect(page).to have_content("SL2080b")
+  end
+
+  it "allows multiple authors" do
+    expect(article_multiple).to be_valid
+    article_multiple.save
+
+    visit articles_path
+
+    expect(page).to have_content("A2080")
+
   end
 end
 
