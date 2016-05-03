@@ -30,7 +30,7 @@ FactoryGirl.define do
     journal "asd journal"
     year 2016
     volume 2
-    tags "spirulina ruokainen"
+    tags "spirulina, ruokainen"
   end
   factory :book do
     reference "B2016"
@@ -52,7 +52,7 @@ FactoryGirl.define do
     title "puffet on hyvää"
     publisher "asd publishing"
     year 2016
-    tags "raikas fresh"
+    tags "raikas, fresh"
   end
   factory :inproceeding do
     reference "I2015"
@@ -74,6 +74,6 @@ FactoryGirl.define do
     title "otsikko"
     booktitle "jätskit kautta aikojen"
     year 2015
-    tags "jaatelo runsas"
+    tags "jaatelo, runsas"
   end
 end
