@@ -37,6 +37,7 @@
           <% if article.tags %>
             <%  article.tags.split(", ").each do |tag| %>
               <span class="label label-primary"> <%= tag %> </span>
+              &nbsp;
             <% end %>
           <% end %>
         </td>
