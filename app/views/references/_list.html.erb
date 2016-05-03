@@ -14,7 +14,14 @@
         <td><%= link_to item.reference, item %></td>
         <td><%= item.author %></td>
         <td><%= item.title %></td>
-        <td><%= item.tags %></td>
+        <td>
+          <% if item.tags %>
+            <%  item.tags.split(", ").each do |tag| %>
+              <span class="label label-primary"> <%= tag %> </span>
+              &nbsp;
+        <% end %>
+        <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
