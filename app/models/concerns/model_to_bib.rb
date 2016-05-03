@@ -11,7 +11,7 @@ module ModelToBib
 
     str = '@' + name + '{' + self.reference + ',' + "\n"
 
-    self.attributes.except("id", "reference", "created_at", "updated_at").each { |key, value|
+    self.attributes.except("id", "reference", "created_at", "updated_at", "tags").each { |key, value|
         next unless value.present?
 
         line = "\t" << key << ' = {' << value.to_s << '},' << "\n"

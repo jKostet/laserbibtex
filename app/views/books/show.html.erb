@@ -60,5 +60,10 @@
   <%= @book.note %>
 </p>
 
+<p>
+  <strong>Tags:</strong>
+  <%= @book.tags %>
+</p>
+
 <%= link_to 'Edit', edit_book_path(@book) %> |
 <%= link_to 'Back', books_path %>
