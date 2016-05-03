@@ -51,4 +51,29 @@ FactoryGirl.define do
     booktitle "Isoja otuksia"
     year 2080
   end
+  factory :inproceeding_with_tags, class: Inproceeding do
+    reference "I2015"
+    author "ville vallaton"
+    title "otsikko"
+    booktitle "jätskit kautta aikojen"
+    year 2015
+    tags "jaatelo, runsas"
+  end
+  factory :article_with_tags, class: Article do
+    reference "A2016"
+    author "pirjospiruliina"
+    title "purjojen sielunelämä"
+    journal "asd journal"
+    year 2016
+    volume 2
+    tags "spirulina, ruokainen"
+  end
+  factory :book_with_tags, class: Book do
+    reference "B2016"
+    author "jarikorianteri"
+    title "puffet on hyvää"
+    publisher "asd publishing"
+    year 2016
+    tags "raikas, fresh"
+  end
 end
