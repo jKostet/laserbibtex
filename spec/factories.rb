@@ -17,7 +17,7 @@ FactoryGirl.define do
   end
   factory :article_multiple, class: Article do
     reference "A2080"
-    author "Pitäjä Yllä and Koodari Kalle"
+    author "pirjospiruliina and purjospurdoliina and spurdospräläläälä"
     title "Otsikoiden ihmeet"
     journal "asd journal"
     year 2080

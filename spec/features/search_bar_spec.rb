@@ -2,7 +2,8 @@ require 'rails_helper'
 
 describe "Search bar" do
   let(:article) { FactoryGirl.build(:article) }
-  let(:book) { FactoryGirl.create(:book) }
+  let(:article_multiple) { FactoryGirl.build(:article_multiple) }
+  let(:book) { FactoryGirl.build(:book) }
   let(:inproceeding) { FactoryGirl.build(:inproceeding) }
 
   it "matches one hit from any field" do
@@ -66,5 +67,47 @@ describe "Search bar" do
 
     expect(page).to have_content 'I2015'
     expect(page).not_to have_content('jätskit kautta aikojen')
+  end
+
+  it "matches fields with AND" do
+    expect(article).to be_valid
+    article.save
+
+    expect(article_multiple).to be_valid
+    article_multiple.save
+
+    expect(book).to be_valid
+    book.save
+
+    visit home_path
+
+    fill_in('q', with: 'pirjo AND spurdo')
+
+    click_button "Search"
+
+    expect(page).to have_content 'A2080'
+    expect(page).not_to have_content 'A2016'
+    expect(page).not_to have_content 'B2016'
+  end
+
+  it "matches fields with multiple AND" do
+    expect(article).to be_valid
+    article.save
+
+    expect(article_multiple).to be_valid
+    article_multiple.save
+
+    expect(book).to be_valid
+    book.save
+
+    visit home_path
+
+    fill_in('q', with: 'pirjo AND purjo AND spurdo')
+
+    click_button "Search"
+
+    expect(page).to have_content 'A2080'
+    expect(page).not_to have_content 'A2016'
+    expect(page).not_to have_content 'B2016'
   end
 end
