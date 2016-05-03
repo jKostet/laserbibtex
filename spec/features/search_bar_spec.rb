@@ -110,4 +110,17 @@ describe "Search bar" do
     expect(page).not_to have_content 'A2016'
     expect(page).not_to have_content 'B2016'
   end
+
+  it "does not match lowercase and" do
+    expect(article_multiple).to be_valid
+    article_multiple.save
+
+    visit home_path
+
+    fill_in('q', with: 'pirjo and purjo')
+
+    click_button "Search"
+
+    expect(page).not_to have_content 'A2080'
+  end
 end

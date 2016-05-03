@@ -55,8 +55,6 @@ describe "All reference page shows correct tag information" do
 
     visit references_path
 
-    save_and_open_page
-
     expect(page).to have_content 'A2016'
     expect(page).to have_content 'B2016'
     expect(page).to have_content 'ville vallaton'
