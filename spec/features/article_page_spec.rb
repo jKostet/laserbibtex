@@ -92,7 +92,6 @@ describe "Article page" do
     visit articles_path
 
     expect(page).to have_content("A2080")
-
   end
 end
 

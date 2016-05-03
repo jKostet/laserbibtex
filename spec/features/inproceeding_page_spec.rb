@@ -2,6 +2,7 @@ require 'rails_helper'
 
 describe "Inproceeding page" do
   let(:inproceeding) { FactoryGirl.build(:inproceeding) }
+  let(:inproceeding_multiple) { FactoryGirl.build(:inproceeding_multiple) }
 
   it "should not have anything before an inproceeding has been created" do
     visit inproceedings_path
@@ -122,6 +123,15 @@ describe "Inproceeding page" do
     expect(page).to have_content("SL2080")
     expect(page).to have_content("SL2080a")
     expect(page).to have_content("SL2080b")
+  end
+
+  it "allows multiple authors" do
+    expect(inproceeding_multiple).to be_valid
+    inproceeding_multiple.save
+
+    visit inproceedings_path
+
+    expect(page).to have_content("I2080")
   end
 
   def create_identical_inproceedings

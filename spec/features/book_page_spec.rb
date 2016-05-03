@@ -2,6 +2,7 @@ require 'rails_helper'
 
 describe "Book page" do
   let(:book) { FactoryGirl.create(:book) }
+  let(:book_multiple) { FactoryGirl.create(:book_multiple) }
 
   it "should not have anything before a book has been created" do
     visit books_path
@@ -83,6 +84,15 @@ describe "Book page" do
     expect(page).to have_content("SL2080")
     expect(page).to have_content("SL2080a")
     expect(page).to have_content("SL2080b")
+  end
+
+  it "allows multiple authors" do
+    expect(book_multiple).to be_valid
+    book_multiple.save
+
+    visit books_path
+
+    expect(page).to have_content("B2080")
   end
 
   def create_identical_books
