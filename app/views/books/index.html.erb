@@ -15,6 +15,7 @@
       <th>Year</th>
       <th>Month</th>
       <th>Note</th>
+      <th>Tags</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -34,6 +35,7 @@
         <td><%= book.year %></td>
         <td><%= book.month %></td>
         <td><%= book.note %></td>
+        <td><%= book.tags %></td>
         <td><%= link_to 'Show', book %></td>
         <td><%= link_to 'Edit', edit_book_path(book) %></td>
         <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
