@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 describe "Book page" do
-  let(:book) { FactoryGirl.create(:book) }
-  let(:book_multiple) { FactoryGirl.create(:book_multiple) }
+  let(:book) { FactoryGirl.build(:book) }
+  let(:book_multiple) { FactoryGirl.build(:book_multiple) }
 
   it "should not have anything before a book has been created" do
     visit books_path

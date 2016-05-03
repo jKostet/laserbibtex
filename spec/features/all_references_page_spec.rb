@@ -55,16 +55,14 @@ describe "All reference page shows correct tag information" do
 
     visit references_path
 
-    save_and_open_page
-
     expect(page).to have_content 'A2016'
     expect(page).to have_content 'B2016'
     expect(page).to have_content 'ville vallaton'
     expect(page).to have_content 'puffet on hyvää'
     expect(page).to have_content 'purjojen sielunelämä'
 
-    expect(page).to have_content 'jaatelo, runsas'
-    expect(page).to have_content 'spirulina, ruokainen'
-    expect(page).to have_content 'raikas, fresh'
+    expect(page).to have_content 'jaatelo runsas'
+    expect(page).to have_content 'spirulina ruokainen'
+    expect(page).to have_content 'raikas fresh'
   end
 end
