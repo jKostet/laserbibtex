@@ -1,49 +1,70 @@
 require 'rails_helper'
 
 describe "Search bar" do
-  # split this to multiple methods
-  it "searches from all the fields and all types of material" do
-    article = Article.new(reference: "SEA00", author: "asd", title: "test", journal: "asd journal", year: 2000, volume: 1)
+  let(:article) { FactoryGirl.build(:article) }
+  let(:book) { FactoryGirl.create(:book) }
+  let(:inproceeding) { FactoryGirl.build(:inproceeding) }
+
+  it "matches one hit from any field" do
     expect(article).to be_valid
     article.save
 
-    article = Article.new(reference: "SEA01", author: "Totoro", title: "Naapurini", journal: "Vuosikertomus metsästä", year: 1826, volume: 9)
-    expect(article).to be_valid
-    article.save
-
-    book = Book.new(reference: "SEA02", author: "Artturi K. Kaarre", title: "Avaruusseikkailu 2000", publisher: "UFO-kirjat Oy", year: 1962)
     expect(book).to be_valid
     book.save
 
     visit articles_path
 
-    fill_in('q', with: 'totoro')
+    fill_in('q', with: 'pirjo')
 
     click_button "Search"
 
-    expect(page).to have_content 'SEA01'
-    expect(page).to have_content 'Totoro'
-    expect(page).not_to have_content 'SEA00'
+    expect(page).to have_content 'A2016'
+    expect(page).to have_content 'pirjo'
+    expect(page).not_to have_content 'B2016'
+  end
+
+  it "matches hits from multiple types of references" do
+    expect(article).to be_valid
+    article.save
+
+    expect(book).to be_valid
+    book.save
 
     visit home_path
 
-    fill_in('q', with: 'SEA')
+    fill_in('q', with: '2016')
 
     click_button "Search"
 
-    expect(page).to have_content 'SEA01'
-    expect(page).to have_content 'SEA00'
+    expect(page).to have_content 'A2016'
+    expect(page).to have_content 'B2016'
+  end
+
+  it "searches case insensitively" do
+    expect(article).to be_valid
+    article.save
 
     visit bibtex_path
 
-    fill_in('q', with: '2000')
+    fill_in('q', with: 'PIRJOSPIRULIINA')
 
     click_button "Search"
 
-    expect(page).to have_content 'SEA00'
-    expect(page).to have_content 'asd'
-    expect(page).to have_content 'SEA02'
-    expect(page).to have_content 'Artturi'
-    expect(page).not_to have_content 'Totoro'
+    expect(page).to have_content 'A2016'
+    expect(page).to have_content 'pirjospiruliina'
+  end
+
+  it "matches to field that are not shown" do
+    expect(inproceeding).to be_valid
+    inproceeding.save
+
+    visit inproceedings_path
+
+    fill_in('q', with: 'aikojen')
+
+    click_button "Search"
+
+    expect(page).to have_content 'I2015'
+    expect(page).not_to have_content('jätskit kautta aikojen')
   end
 end

@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 describe "Inproceeding page" do
+  let(:inproceeding) { FactoryGirl.build(:inproceeding) }
+
   it "should not have anything before an inproceeding has been created" do
     visit inproceedings_path
 
@@ -21,24 +23,22 @@ describe "Inproceeding page" do
     expect(page).to have_content 'Month'
     expect(page).to have_content 'Note'
 
-    expect(page).not_to have_content("asd")
+    expect(page).not_to have_content("I2015")
   end
 
   it "shows added inproceeding" do
-    inproceeding = Inproceeding.new(reference: "INP00", author: "asd", title: "test", booktitle: "asd booktitle", year: 2000)
     expect(inproceeding).to be_valid
     inproceeding.save
 
     visit inproceedings_path
 
-    expect(page).to have_content 'INP00'
-    expect(page).to have_content 'asd'
-    expect(page).to have_content 'test'
-    expect(page).to have_content 'asd booktitle'
+    expect(page).to have_content 'I2015'
+    expect(page).to have_content 'ville vallaton'
+    expect(page).to have_content 'otsikko'
+    expect(page).to have_content 'jätskit kautta aikojen'
   end
 
   it "allows user to navigate to the page of an inproceeding" do
-    inproceeding = Inproceeding.new(reference: "INP01", author: "asd", title: "test", booktitle: "asd booktitle", year: 2000)
     expect(inproceeding).to be_valid
     inproceeding.save
 
@@ -46,11 +46,10 @@ describe "Inproceeding page" do
 
     click_link "Show"
 
-    expect(page).to have_content "Reference: INP01"
+    expect(page).to have_content "Reference: I2015"
   end
 
   it "allows user to edit the inproceedings" do
-    inproceeding = Inproceeding.new(reference: "INP02", author: "asd", title: "test", booktitle: "asd booktitle", year: 2000)
     expect(inproceeding).to be_valid
     inproceeding.save
 
@@ -67,7 +66,6 @@ describe "Inproceeding page" do
   end
 
   it "allows user to destroy inproceedings" do
-    inproceeding = Inproceeding.new(reference: "INP03", author: "asd", title: "test", booktitle: "asd booktitle", year: 2000)
     expect(inproceeding).to be_valid
     inproceeding.save
 
@@ -76,7 +74,7 @@ describe "Inproceeding page" do
     click_link "Destroy"
 
     expect(page).to have_content("Inproceeding was successfully destroyed.")
-    expect(page).not_to have_content("INP03")
+    expect(page).not_to have_content("I2015")
   end
 
   it "generates reference automatically if field is left empty" do
@@ -124,5 +122,20 @@ describe "Inproceeding page" do
     expect(page).to have_content("SL2080")
     expect(page).to have_content("SL2080a")
     expect(page).to have_content("SL2080b")
+  end
+
+  def create_identical_inproceedings
+    click_link "New Inproceeding"
+
+    fill_in('inproceeding_author', with: 'Sotilas Tähtien and LMAO AYYY')
+    fill_in('inproceeding_title', with: 'In pumpkins')
+    fill_in('inproceeding_booktitle', with: 'Avaruus ja puutarha')
+    fill_in('inproceeding_year', with: '2080')
+
+    click_button "Create Inproceeding"
+
+    expect(page).to have_content("Inproceeding was successfully created.")
+
+    click_link "Back"
   end
 end

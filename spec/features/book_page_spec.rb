@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 describe "Book page" do
+  let(:book) { FactoryGirl.create(:book) }
+
   it "should not have anything before a book has been created" do
     visit books_path
 
@@ -17,24 +19,22 @@ describe "Book page" do
     expect(page).to have_content 'Month'
     expect(page).to have_content 'Note'
 
-    expect(page).not_to have_content("asd")
+    expect(page).not_to have_content("B2016")
   end
 
   it "shows added books" do
-    book = Book.new(reference: "BOO00", author: "asd", title: "test", publisher: "asd publish", year: 2000)
     expect(book).to be_valid
     book.save
 
     visit books_path
 
-    expect(page).to have_content 'BOO00'
-    expect(page).to have_content 'asd'
-    expect(page).to have_content 'test'
-    expect(page).to have_content 'asd publish'
+    expect(page).to have_content 'B2016'
+    expect(page).to have_content 'jarikorianteri'
+    expect(page).to have_content 'puffet on hyvää'
+    expect(page).to have_content 'asd publishing'
   end
 
   it "allows user to navigate to the page of a book" do
-    book = Book.new(reference: "BOO01", author: "asd", title: "test", publisher: "asd publish", year: 2000)
     expect(book).to be_valid
     book.save
 
@@ -42,11 +42,10 @@ describe "Book page" do
 
     click_link "Show"
 
-    expect(page).to have_content "Reference: BOO01"
+    expect(page).to have_content "Reference: B2016"
   end
 
   it "allows user to edit the books" do
-    book = Book.new(reference: "BOO02", author: "asd", title: "test", publisher: "asd publish", year: 2000)
     expect(book).to be_valid
     book.save
 
@@ -63,7 +62,6 @@ describe "Book page" do
   end
 
   it "allows user to destroy books" do
-    book = Book.new(reference: "BOO03", author: "asd", title: "test", publisher: "asd publish", year: 2000)
     expect(book).to be_valid
     book.save
 
@@ -72,53 +70,33 @@ describe "Book page" do
     click_link "Destroy"
 
     expect(page).to have_content("Book was successfully destroyed.")
-    expect(page).not_to have_content("BOO03")
+    expect(page).not_to have_content("B2016")
   end
 
   it "generates reference automatically if field is left empty" do
     visit books_path
 
-    click_link "New Book"
-
-    fill_in('book_author', with: 'Sotilas Tähtien and LMAO AYYY')
-    fill_in('book_title', with: 'Kurpitsakirjallisuus')
-    fill_in('book_publisher', with: 'Avaruus ja puutarha')
-    fill_in('book_year', with: '2080')
-
-    click_button "Create Book"
-
-    expect(page).to have_content("Book was successfully created.")
-
-    click_link "Back"
-
-    click_link "New Book"
-
-    fill_in('book_author', with: 'Sotilas Tähtien and LMAO AYYY')
-    fill_in('book_title', with: 'Kurpitsakirjallisuus')
-    fill_in('book_publisher', with: 'Avaruus ja puutarha')
-    fill_in('book_year', with: '2080')
-
-    click_button "Create Book"
-
-    expect(page).to have_content("Book was successfully created.")
-
-    click_link "Back"
-
-    click_link "New Book"
-
-    fill_in('book_author', with: 'Sotilas Tähtien and LMAO AYYY')
-    fill_in('book_title', with: 'Kurpitsakirjallisuus')
-    fill_in('book_publisher', with: 'Avaruus ja puutarha')
-    fill_in('book_year', with: '2080')
-
-    click_button "Create Book"
-
-    expect(page).to have_content("Book was successfully created.")
-
-    click_link "Back"
+    create_identical_books
+    create_identical_books
+    create_identical_books
 
     expect(page).to have_content("SL2080")
     expect(page).to have_content("SL2080a")
     expect(page).to have_content("SL2080b")
+  end
+
+  def create_identical_books
+    click_link "New Book"
+
+    fill_in('book_author', with: 'Sotilas Tähtien and LMAO AYYY')
+    fill_in('book_title', with: 'Kurpitsakirjallisuus')
+    fill_in('book_publisher', with: 'Avaruus ja puutarha')
+    fill_in('book_year', with: '2080')
+
+    click_button "Create Book"
+
+    expect(page).to have_content("Book was successfully created.")
+
+    click_link "Back"
   end
 end
