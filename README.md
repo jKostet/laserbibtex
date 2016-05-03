@@ -10,3 +10,4 @@ ohtu miniprojekti k2016 [![Build Status](https://travis-ci.org/jKostet/laserbibt
 
 [Miniprojektin speksi](https://github.com/mluukkai/ohtu2016/wiki/miniprojekti-speksi)
 
+[Raportti miniprojektista](https://github.com/jKostet/laserbibtex/blob/master/Miniprojekti_raportti.md)
