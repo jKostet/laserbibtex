@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :author %><br>
-    <%= f.text_field :author %>
+    <%= f.text_field :author, :placeholder => "Luukkainen Matti and Vihavainen Arto", data: {toggle: "tooltip", placement: "left" }, title: "Separate multiple authors with and, like \"Luukkainen Matti and Vihavainen Arto and Lokki Heikki\"" %>
   </div>
   <div class="field">
     <%= f.label :title %><br>
