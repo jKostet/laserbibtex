@@ -1,6 +1,7 @@
 class SearchController < ApplicationController
 
   def search_results
+
     query = params[:q]
     @queries = query.split(" AND ")
     @results = []
@@ -20,13 +21,32 @@ class SearchController < ApplicationController
   def check_queries(citation)
     found = false
     @queries.each do |q|
-      found = check_citation(citation,q)
+      if (q.start_with?("tag:"))
+        query = q[4..-1]
+        found = check_tags(citation,query)
+      else
+        found = check_citation(citation,q)
+      end
       # if the citation doesn't include a query, no need to check the others
       if !found
         break
       end
     end
     found
+  end
+
+  def check_tags(citation, query)
+    if (citation.tags == nil)
+      return false
+    end
+    tags = citation.tags.split(",")
+    tags.each do |tag|
+      tag.strip!
+      if (tag.downcase.include?(query.downcase))
+        return true
+      end
+    end
+    false
   end
 
   # Checks if given citation includes a single query

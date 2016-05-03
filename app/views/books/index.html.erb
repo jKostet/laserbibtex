@@ -35,7 +35,14 @@
         <td><%= book.year %></td>
         <td><%= book.month %></td>
         <td><%= book.note %></td>
-        <td><%= book.tags %></td>
+        <td>
+          <% if book.tags %>
+              <%  book.tags.split(", ").each do |tag| %>
+                  <span class="label label-primary"> <%= tag %> </span>
+                  &nbsp;
+              <% end %>
+          <% end %>
+        </td>
         <td><%= link_to 'Show', book %></td>
         <td><%= link_to 'Edit', edit_book_path(book) %></td>
         <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
