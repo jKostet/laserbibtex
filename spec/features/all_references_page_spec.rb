@@ -63,8 +63,8 @@ describe "All reference page shows correct tag information" do
     expect(page).to have_content 'puffet on hyvää'
     expect(page).to have_content 'purjojen sielunelämä'
 
-    expect(page).to have_content 'jaatelo, runsas'
-    expect(page).to have_content 'spirulina, ruokainen'
-    expect(page).to have_content 'raikas, fresh'
+    expect(page).to have_content 'jaatelo runsas'
+    expect(page).to have_content 'spirulina ruokainen'
+    expect(page).to have_content 'raikas fresh'
   end
 end
