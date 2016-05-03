@@ -41,7 +41,13 @@
         <td><%= inproceeding.year %></td>
         <td><%= inproceeding.month %></td>
         <td><%= inproceeding.note %></td>
-        <td><%= inproceeding.tags %></td>
+        <td>
+          <% if inproceeding.tags %>
+              <%  inproceeding.tags.split(", ").each do |tag| %>
+                  <span class="label label-primary"> <%= tag %> </span>
+              <% end %>
+          <% end %>
+        </td>
         <td><%= link_to 'Show', inproceeding %></td>
         <td><%= link_to 'Edit', edit_inproceeding_path(inproceeding) %></td>
         <td><%= link_to 'Destroy', inproceeding, method: :delete, data: { confirm: 'Are you sure?' } %></td>
