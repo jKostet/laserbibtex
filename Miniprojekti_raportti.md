@@ -31,11 +31,15 @@ Ryhmän työskentely sujui mallikkaasti. Teimme töitä yhdessä, yleensä lähe
 
 Paikalle pääseminen ajoissa tuotti paikoin kaikille ryhmän jäsenille haasteita, jonka takia sprinttien työnjakoa ei suunniteltu kovin tarkkaan yhdessä. Työilmapiiri oli kuitenkin rento, ja jaoimme taskit pitkälti kaavalla: "Hei mitä työstätte? - Jees, voisin työstää asiaa X."
 
-Pidimme hyvin vapaamuotoiset retrospektit, Sad&Glad&Mad yms. näihin tarkoitut tekniikat ovat varmasti hyödyllisempiä, kun sprintissä on enemmän asiaa. Meille riitti fiilistely. :DD
+Pidimme hyvin vapaamuotoiset retrospektit. Glad, Sad, Mad ja muut retrospekteihin tarkoitut tekniikat ovat varmasti hyödyllisempiä, kun sprintissä on enemmän asiaa. Meille riitti fiilistely.
 
 # Mitä opimme, olisimme halunneet oppia, mikä tuntui turhalta
-Burndown-käyrien piirtely näin pienessä projektissa tuntui hieman ylimitoitetulta. Viikottaiset työmäärät liikkuivat kuitenkin aina alle kymmenessä tunnissa, ja story pointtien jakaminen kohtailaisen pienille storykokonaisuuksille vaikutti liioiteltulta.
+Burndown-käyrien piirtely näin pienessä projektissa tuntui hieman ylimitoitetulta. Viikottaiset työmäärät liikkuivat kuitenkin aina alle kymmenessä tunnissa, ja story pointtien jakaminen kohtailaisen pienille storykokonaisuuksille vaikutti liioiteltulta. Työaikaestimaateissakaan ei päässyt kovin hirveää vaihtelua tapahtumaan, joten lopulliset burndownit olivat aika suoraviivaisia.
 
-Scrum tekniks :DD, ror mäster :D:D
+Opimme kuitenkin paljon Scrumin tekniikoista. Etenkin user storyjen kirjoittaminen ja niihin liittyvien taskien erottelu tuli hyvin tutuksi miniprojektin aikana.
+
+Lisäksi ainakin ryhmäläisistä ne, jotka eivät olleet aiemmin käyttäneen RoR:ia, oppivat paljon uutta.
+
+
 
 lisää roro :D
