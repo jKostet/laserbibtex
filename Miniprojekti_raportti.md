@@ -10,6 +10,32 @@ Edellisten lisäksi ryhmä laatii projektin kulusta pienen raportin (noin 2 sivu
 
 ---------------------------------------
 ## Ohjelmistotuotanto k2016, miniprojektin raportti
-Ryhmä: LaserBibTeX (Juho Kostet, Kristiina Rahikainen, Maximilian Remming, Nea Pirttinen, Mikko Markkinen)
+Ryhmä: LaserBibTeX
+	- Juho Kostet
+	- Kristiina Rahikainen
+	- Maximilian Remming
+	- Nea Pirttinen
+	- Mikko Markkinen
 
-(raport content here)
+
+# Sprinteissä kohdatut ongelmat
+Kohtasimme hieman ongelmia työympäristön asennuksen kanssa; Rails & Ruby versioiden päivittäminen kaikille samaan versiion vei aikaa varsinaiselta työskentelyltä.
+
+User storyjen estimointi oli paikoin haastavaa. Rails magialla muutamat asiat sujuivat minuuteissa, toiset vastaavilta kuulostavat storyt vaativatkin ajateltua enemmän rankkaa tiedonhakua ja kokeiluja.
+
+Kolme viidestä ryhmän jäsenestä ei ollut aiemmin tutustunut Ruby on Railssiin, joten sen opettelu projektin yhteydessä tuotti näille jäsenille pieniä haasteita. Onnistunut googlettelu ja tuki ryhmän RoR-osaajilta kuitenkin sai työn luistamaan.
+
+
+# Mikä sujui hyvin, mitä parannettavaa
+Ryhmän työskentely sujui mallikkaasti, teimme töitä yhdessä, yleensä lähes koko porukalla.
+
+Paikalle pääseminen ajoissa tuotti paikoin kaikille ryhmän haasteita, jonka takia sprinttien työnjakoa ei kovin tarkkaan suunniteltu yhdessä. Työilmapiiri oli kuitenkin rento, ja jaoimme taskit pitkälti kaavalla: "Hei mitä työstätte? - Jees, voisin työstää asiaa X."
+
+Pidimme hyvin vapaamuotoiset retrospektit, Sad&Glad&Mad yms. näihin tarkoitut tekniikat ovat varmasti hyödyllisempiä, kun sprintissä on enemmän asiaa. Meille riitti fiilistely. :DD
+
+# Mitä opimme, olisimme halunneet oppia, mikä tuntui turhalta
+Scrum tekniks :DD, ror mäster :D:D
+
+lisää roro :D
+
+burndown näin pienessä projektissa
