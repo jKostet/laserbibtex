@@ -38,7 +38,3 @@ Burndown-käyrien piirtely näin pienessä projektissa tuntui hieman ylimitoitet
 Opimme kuitenkin paljon Scrumin tekniikoista. Etenkin user storyjen kirjoittaminen ja niihin liittyvien taskien erottelu tuli hyvin tutuksi miniprojektin aikana.
 
 Lisäksi ainakin ryhmäläisistä ne, jotka eivät olleet aiemmin käyttäneen RoR:ia, oppivat paljon uutta.
-
-
-
-lisää roro :D
