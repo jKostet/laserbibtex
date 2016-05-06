@@ -9,7 +9,7 @@ Edellisten lisäksi ryhmä laatii projektin kulusta pienen raportin (noin 2 sivu
 
 ---------------------------------------
 # Ohjelmistotuotanto k2016, miniprojektin raportti
-Ryhmä: LaserBibTeX
+- Ryhmä: LaserBibTeX
 	- Juho Kostet
 	- Kristiina Rahikainen
 	- Maximilian Remming
