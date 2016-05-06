@@ -34,7 +34,7 @@ Pidimme hyvin vapaamuotoiset retrospektit. Glad, Sad, Mad ja muut retrospekteihi
 
 
 ## Mitä opimme, olisimme halunneet oppia, mikä tuntui turhalta
-Burndown-käyrien piirtely näin pienessä projektissa tuntui hieman ylimitoitetulta. Viikottaiset työmäärät liikkuivat aina alle kymmenessä tunnissa, ja story pointtien jakaminen kohtailaisen pienille storykokonaisuuksille vaikutti liioiteltulta. Työaikaestimaateissakaan ei päässyt kovin hirveää vaihtelua tapahtumaan, joten lopulliset burndownit olivat aika suoraviivaisia.
+Burndown-käyrien piirtely näin pienessä projektissa tuntui hieman ylimitoitetulta. Viikottaiset työmäärät liikkuivat aina alle kymmenessä tunnissa, ja story pointtien jakaminen kohtailaisen pienille storykokonaisuuksille vaikutti liioitellulta. Työaikaestimaateissakaan ei päässyt kovin hirveää vaihtelua tapahtumaan, joten lopulliset burndownit olivat aika suoraviivaisia.
 
 Opimme paljon Scrumin tekniikoista, vaikka työskentelymme ei tyylipuhdasta Scrumia edustanutkaan (one more happy case of "We are doing Scrum, but ..."). Etenkin user storyjen kirjoittaminen ja niihin liittyvien taskien erottelu tuli hyvin tutuksi miniprojektin aikana. Muutkin luennoilla käydyt tekniikat, kuten backlogin pyörittely sekä integraation ja testaamisen jatkuvuus tulivat hyvin esille työskentelyssä, toki pienemmässä mittakaavassa kuin luentojen esimerkeissä.
 
