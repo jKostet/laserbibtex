@@ -108,5 +108,4 @@ def create_identical_articles
 
   expect(page).to have_content("Article was successfully created.")
 
-  click_link "Back"
 end
