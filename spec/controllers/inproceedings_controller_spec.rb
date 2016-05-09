@@ -81,7 +81,7 @@ RSpec.describe InproceedingsController, type: :controller do
 
       it "redirects to the created inproceeding" do
         post :create, {:inproceeding => valid_attributes}, valid_session
-        expect(response).to redirect_to(inproceedings_path)
+        expect(response).to redirect_to(Inproceeding.last)
       end
     end
 

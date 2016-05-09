@@ -107,5 +107,6 @@ describe "Book page" do
 
     expect(page).to have_content("Book was successfully created.")
 
+    click_link "Back"
   end
 end

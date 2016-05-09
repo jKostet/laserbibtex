@@ -85,7 +85,7 @@ RSpec.describe BooksController, type: :controller do
 
       it "redirects to the created book" do
         post :create, {:book => valid_attributes}, valid_session
-        expect(response).to redirect_to(books_path)
+        expect(response).to redirect_to(Book.last)
       end
     end
 

@@ -35,7 +35,7 @@ class InproceedingsController < ApplicationController
 
     respond_to do |format|
       if @inproceeding.save
-        format.html { redirect_to inproceedings_path, notice: 'Inproceeding was successfully created.' }
+        format.html { redirect_to @inproceeding, notice: 'Inproceeding was successfully created.' }
         format.json { render :show, status: :created, location: @inproceeding }
       else
         format.html { render :new }
