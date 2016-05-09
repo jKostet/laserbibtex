@@ -92,7 +92,6 @@ describe "Inproceeding page" do
 
     expect(page).to have_content("Inproceeding was successfully created.")
 
-    click_link "Back"
 
     click_link "New Inproceeding"
 
@@ -105,7 +104,6 @@ describe "Inproceeding page" do
 
     expect(page).to have_content("Inproceeding was successfully created.")
 
-    click_link "Back"
 
     click_link "New Inproceeding"
 
@@ -117,8 +115,7 @@ describe "Inproceeding page" do
     click_button "Create Inproceeding"
 
     expect(page).to have_content("Inproceeding was successfully created.")
-
-    click_link "Back"
+    
 
     expect(page).to have_content("SL2080")
     expect(page).to have_content("SL2080a")
@@ -146,6 +143,5 @@ describe "Inproceeding page" do
 
     expect(page).to have_content("Inproceeding was successfully created.")
 
-    click_link "Back"
   end
 end
